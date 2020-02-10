@@ -1,0 +1,10 @@
+title: Sesnors
+id: sensors
+theme: dark-mode
+icon: mdi:thermometer-lines
+cards:
+ - !include /config/lovelace/cards/018_temps_humidity.yaml
+ - !include /config/lovelace/cards/021_power_gas_consumption.yaml
+ - !include /config/lovelace/cards/028_temps_humidity_per_room.yaml
+ - !include /config/lovelace/cards/030_temps_humidity_cabinet.yaml
+ - !include /config/lovelace/cards/023_power_consumption_individual.yaml

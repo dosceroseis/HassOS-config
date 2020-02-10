@@ -1,0 +1,77 @@
+type: custom:vertical-style-card
+title: Hassio Control
+style:
+  font_size: 24px
+  border: true
+cards:
+  - type: vertical-stack
+    cards:
+    - type: horizontal-stack
+      cards:
+      - type: picture
+        image: /local/divider.png
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          name: HomeAssistant
+          icon: mdi:home-assistant
+          show_name: true
+          show_label: false
+          color_type: icon
+          color: var(--icon-color-orange)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.restart_homeassistant
+          tap_action:
+            action: call-service
+            service: script.hassiocontrol_homeassistant_restart
+          style:
+          - font-size: 10px
+          - text-transform: capitalize
+        - type: "custom:button-card"
+          icon: mdi:nodejs
+          name: NodeRed
+          show_name: true
+          show_label: false
+          color_type: icon
+          color: var(--icon-color-orange)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.restart_nodered
+          tap_action:
+            action: call-service
+            service: script.hassiocontrol_nodered_restart
+          style:
+           - font-size: 10px
+           - text-transform: capitalize
+        - type: "custom:button-card"
+          icon: mdi:router-wireless
+          name: Zigbee2mqtt
+          show_name: true
+          show_label: false
+          color_type: icon
+          color: var(--icon-color-orange)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.restart_zigbee2mqtt
+          tap_action:
+            action: call-service
+            service: script.hassiocontrol_zigbee2mqtt_restart
+          style:
+           - font-size: 10px
+           - text-transform: capitalize
+        - type: "custom:button-card"
+          icon: mdi:restart
+          name: Reboot
+          show_name: true
+          show_label: false
+          color_type: icon
+          color: var(--icon-color-orange)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.reboot_host
+          tap_action:
+            action: more-info
+          style:
+           - font-size: 10px
+           - text-transform: capitalize
+    - type: horizontal-stack
+      cards:
+      - type: picture
+        image: /local/divider.png

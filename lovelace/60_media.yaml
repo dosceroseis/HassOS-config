@@ -1,0 +1,18 @@
+title: Media
+id: media
+icon: mdi:television-classic
+cards:
+ - type: custom:upcoming-media-card
+   entity: sensor.sonarr_upcoming_retained
+   title: Upcoming Episodes
+   date: ddmm
+   clock: 24
+   max: 15
+   image_style: fanart
+ - type: custom:upcoming-media-card
+   entity: sensor.radarr_upcoming_retained
+   title: Upcoming Movies
+   date: ddmm
+   clock: 24
+   max: 15
+   image_style: fanart

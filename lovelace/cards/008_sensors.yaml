@@ -1,0 +1,147 @@
+type: custom:vertical-style-card
+title: Sensors
+style:
+  font_size: 24px
+  border: true
+cards:
+  - type: vertical-stack
+    cards:
+    - type: horizontal-stack
+      cards:
+      - type: picture
+        image: /local/divider.png
+    - type: horizontal-stack
+      cards:
+      - type: "custom:button-card"
+        name: Front
+        icon: mdi:door
+        tap_action: 
+         action: more-info
+        color_type: icon
+        entity: binary_sensor.0x00158d00022d18d8_contact
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - color: var(--icon-off-color)
+         - background-color: var(--element-accent-color)
+        state:
+        - value: 'on'
+          color: var(--icon-color-amber)
+          icon: mdi:door-open
+        - value: 'off'
+          color: var(--element-accent-color)
+          icon: mdi:door
+      - type: "custom:button-card"
+        icon: mdi:door
+        name: Living
+        tap_action: 
+         action: more-info
+        color_type: icon
+        entity: binary_sensor.0x00158d0002e24d72_contact
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - color: var(--icon-off-color)
+         - background-color: var(--element-accent-color)
+        state:
+        - value: 'on'
+          color: var(--icon-color-amber)
+          icon: mdi:door-open
+        - value: 'off'
+          color: var(--element-accent-color)
+          icon: mdi:door
+      - type: "custom:button-card"
+        icon: mdi:door
+        name: Back
+        tap_action: 
+         action: more-info
+        color_type: icon
+        entity: binary_sensor.0x00158d000204674e_contact
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - color: var(--icon-off-color)
+         - background-color: var(--element-accent-color)
+        state:
+        - value: 'on'
+          color: var(--icon-color-amber)
+          icon: mdi:door-open
+        - value: 'off'
+          color: var(--element-accent-color)
+          icon: mdi:door
+      - type: "custom:button-card"
+        icon: mdi:door
+        name: Garage
+        tap_action: 
+         action: more-info
+        color_type: icon
+        entity: binary_sensor.xiaomi_doorsensor_garagedoor
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+        state:
+        - value: 'on'
+          color: var(--icon-color-amber)
+          icon: mdi:door-open
+        - value: 'off'
+          color: var(--element-accent-color)
+          icon: mdi:door
+    - type: horizontal-stack
+      cards:
+      - type: "custom:button-card"
+        icon: mdi:walk
+        name: Entree
+        tap_action: 
+         action: more-info
+        color: var(--icon-color-amber)
+        color_off: var(--icon-off-color)
+        color_type: icon
+        entity: binary_sensor.hue_motion_sensor_entree
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+      - type: "custom:button-card"
+        icon: mdi:walk
+        name: Hallway
+        tap_action: 
+         action: more-info
+        color: var(--icon-color-amber)
+        color_off: var(--icon-off-color)
+        color_type: icon
+        entity: input_boolean.motion_hallway
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+      - type: "custom:button-card"
+        icon: mdi:walk
+        name: Kitchen
+        tap_action: 
+         action: more-info
+        color: var(--icon-color-amber)
+        color_off: var(--icon-off-color)
+        color_type: icon
+        entity: binary_sensor.hue_motion_sensor_kitchen
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+      - type: "custom:button-card"
+        icon: mdi:walk
+        name: Washroom
+        tap_action: 
+         action: more-info
+        color: var(--icon-color-amber)
+        color_off: var(--icon-off-color)
+        color_type: icon
+        entity: binary_sensor.hue_motion_sensor_washroom
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+    - type: horizontal-stack
+      cards:
+      - type: picture
+        image: /local/divider.png

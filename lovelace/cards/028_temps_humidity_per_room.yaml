@@ -1,0 +1,102 @@
+type: custom:vertical-style-card
+title: Temps & Humidity
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.0x00158d0003230930_temperature
+      name: Sitting Area
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-red)
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.0x00158d0003230930_humidity
+      name: Sitting Area
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-blue)
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.0x00158d000245ab24_temperature
+      name: Bedroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-red)
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.0x00158d000245ab24_humidity
+      name: Bedroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-blue)
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.0x00158d0002320730_temperature
+      name: Bathroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-red)
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.0x00158d0002320730_humidity
+      name: Bathroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-blue)
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.0x00158d000247e7ff_temperature
+      name: Attic
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-red)
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.0x00158d000247e7ff_humidity
+      name: Attic
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-blue)

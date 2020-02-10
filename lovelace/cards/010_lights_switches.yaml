@@ -1,0 +1,228 @@
+type: custom:vertical-style-card
+title: Lights per room
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+     - type: "custom:button-card"
+       name: Entree
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.entree_2
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+     - type: "custom:button-card"
+       name: Hallway
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.hallway
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+     - type: "custom:button-card"
+       name: Diningarea
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.diningarea
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+     - type: "custom:button-card"
+       name: Divide
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.divide
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+  - type: horizontal-stack
+    cards:
+    - type: custom:slider-entity-row
+      entity: light.entree_2
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.hallway
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.diningarea
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.divide
+      full_row: true
+      hide_state: true
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+     - type: "custom:button-card"
+       name: Livingroom
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.livingroom
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+     - type: "custom:button-card"
+       name: Kitchen
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.kitchen
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+     - type: "custom:button-card"
+       name: Washroom
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.washroom
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+     - type: "custom:button-card"
+       name: Garage
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.garage
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+  - type: horizontal-stack
+    cards:
+    - type: custom:slider-entity-row
+      entity: light.livingroom
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.kitchen
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.washroom
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.garage
+      full_row: true
+      hide_state: true
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+     - type: "custom:button-card"
+       name: Master Bedroom
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.master_bedroom
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+     - type: "custom:button-card"
+       name: Small Bedroom
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.small_bedroom
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+     - type: "custom:button-card"
+       name: Attic
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.attic
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+     - type: "custom:button-card"
+       name: Outside
+       color: auto
+       color_off: var(--icon-off-color)
+       color_type: icon
+       icon: mdi:lightbulb
+       entity: light.outside
+       action: more_info
+       style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+  - type: horizontal-stack
+    cards:
+    - type: custom:slider-entity-row
+      entity: light.master_bedroom
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.small_bedroom
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.attic
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.outside
+      full_row: true
+      hide_state: true
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png

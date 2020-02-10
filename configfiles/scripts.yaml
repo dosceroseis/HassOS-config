@@ -1,0 +1,382 @@
+shutdown_brontosaurus:
+  sequence:
+  - service: hassio.addon_stdin
+    data:
+      addon: core_rpc_shutdown
+      input: Brontosaurus
+shutdown_velociraptor:
+  sequence:
+  - service: hassio.addon_stdin
+    data:
+      addon: core_rpc_shutdown
+      input: Velociraptor
+aquarium_daylight:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - JgBaAAABKZUSExMTEhMSExMTEhMSExMTEjgSNxI4EjgSExI4EjgSOBI4EjcSFBITEhMSFBITEhMSFBITEjgSOBI3EzcSOBI4EgAFRwABKEsSAAxgAAEpSxKcCwANBQAAAAAAAAAAAAAAAAAA
+aquarium_daylightincrease:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - JgBQAAABKZYSExMTEhMSExMTEhMSFBITEjgSOBI3EzcSFBI4EjcTNxI4EjgSOBITEhQTEhITEhQSExITExMSOBI3EzcSOBI4EgAFSAABKUsSAA0FAAAAAAAAAAA=
+aquarium_daylightdecrease:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - JgBQAAABKZYSExIUEhMSExIUEhMSExIUEjgSNxM3EjgSExM3EjgSOBI4EjgSExI4EhMSFBITEhMSFBITEjgSExI4EjgSOBI3EwAFRwABKUsSAA0FAAAAAAAAAAA=
+aquarium_moonlight:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - JgBQAAABKZYTEhITEhQSExITEhQSExMSEzcSOBI4EjgSExI4EjgSOBM2EzcSOBM3EhMSFBMSEhMTExITEhMTExI4EjgTNhM3EgAFSAABKUsSAA0FAAAAAAAAAAA=
+aquarium_lightning:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - JgBQAAABKZYTEhITEhQSExITExMSExITEzcSOBI4EjgTEhI4EjgSOBI4EzcSExITEzcSExMTEhMSExMTEzcSOBMSEjgTNxI3EwAFRwABKUsSAA0FAAAAAAAAAAA=
+aquarium_orange:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - JgBQAAABKZUTExITEhMSFBITEhMSFBITEjgTNxM3EjcTExM3EjcTNxIUEhMSExMTEjgSExITExMSNxM3EjgSOBITEjgSOBI4EwAFRwABKEsTAA0FAAAAAAAAAAA=
+aquarium_yellow:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - JgBUAAwAC9MAASmWExISFBITEhMSFBITEhMSFBI3EzcUNhI4ExITNxI4EjgTEhIUEjcTExI4EhMSExMTEjgTNhMTEjgSExI4EjgSOBIABUcAASpKEgANBQAAAAA=
+aquarium_rgb:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - JgBUAAABKZUTExITEhMSFBITEhMTExITEzcTNxI4EjcTExI4EjcSOBIUEjcTExMSEhQTEhITEhQSNxIUEjgSOBI3EjgTNxI4EgAFSAABKEsSAAedCgANBQAAAAA=
+aquarium_rgbincrease:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - JgBQAAABKpQSFBITEhQTExEUEhMSFBETEjgSOBM3EjgSFBE4EjgTNhMUERQSExIUEhMRFRAVERQROBI5ETgSOBI4EjgROBI5EQAFSAABKEsSAA0FAAAAAAAAAAA=
+aquarium_rgbdecrease:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - JgBQAAABKZYSExITEhQSExITExMSExITEzcSOBI4EjgSExI4EjgSOBM3EhMSExIUEhMSExIUEhMSExI4EzcSOBI4EjgSNxM3EgAFSAABKUsSAA0FAAAAAAAAAAA=
+aquarium_cycle:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - JgBSAAcmAAEplRMTEhMSExIUEhMSExIUEhMSOBI4EjgSNxMTEjgSNxM3EjgSOBI4EhMSOBIUEhMSExIUEhMSExI4EhQSNxI4EjgSAAVIAAEpSxMADQUAAAAAAAA=
+kika_1on:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - sgKEAwcLCC4HCwcuBy4HDAcMBy0ICwcuBy4HDAcuBwwHLgcMBy0ICwcuBwwHLgcLCC0ICwcuBwwHCwcuBwwHLggtCAsHCwguBwsHLgcvBgwHCwguBwsHLgcMBy4HCwgtBwABXwddBwsHLgguBwsHCwguBy0ICwgtCAsHLgcMBwsHLgcuBw0GDAcuBwsILQgLBy4HLgcMBwsHLwYMBy4HLgcLCC4HDAcuBwsILgYMBy4HDAcuBwsILQgLBy4HDAcLBy4HDAcuCC0HDAcMBy4HCwcuBy4HDAcLCC0ICwcuBwwHLgcLCC0HAAFfB10HCwcuCC0HDAcLCC4HLQgLBy4HDAcuBwwHCwcuBy4HDAcMBi8HCwcvBwsHLgcuCAsHCwcuCAsHLgcuBwwHLQgMBy0ICwguBgwHLgcMBy4HCwgtCAsHLgcLCAwGLgcMBy4HLggLBwsHLggLBy4HLggLBwsILgcLBy4HCwguBwsHLgcAAV8HXQcLBy4HLggLBwsHLwcuBwwGLgcMBy4HDAcLBy4HLgcMBwwHLgcLCC0ICwcuBy4HDAcLBy4ICwcuBy4HDAcuBwwHLgcMBi4ICwcuBwwHLgcMBi8GDAcuBwsICwgtCAsHLwYuCAsHCwguBwsHLgcuCAsHCwguBwsHLwYMBy4HCwcuBwABXwddBwsHLgguBgwHCwguBy4HDActCAsHLgcMBwsHLwYuCAsICwcuBwsILgcLBy8HLQcMCAoILQgLBy8HLQcMBy4HDAgtBwwHLgcLCC4HCwcuBwwHLgcLCC0ICwcLCC4HCwcvBy4HCwgLBy4HDAYvBy4HCwgLBy4HDAYvBwsHLgcMBy4HAAFfBl0ICwcuBy4HDAcLBy4ILQcMBy4HDAcuBwsHDAcuBy4HDAcLCC4HCwcuCAsHLgcuBwwGDAcuCAsHLgcuBwwGLggMBy0ICwcuBwwHLgcMBy0ICwcuBwwHLgcLBwwHLggLBy4ILQcMBwsHLwYMBy4HLggLBwsHLwcLBy4HDAcuBwwGLgcAAV4IXQcLBy8GLwYMBwsILgcuBwwHLQcMCC0HDAcLBy4ILQgLCAsHLgcMBy4HCwcuCC0ICwcLCC4HCwcvBy0HDAcuBwwHLgcMBy4HCwguBgwHLgcMBy0ICwgtBwwHCwcvBwsHLwcuBwsICwcuCAoILQguBwsICwcuBwsILgcLBy4HDAcuBwAF3AAAAAA=
+kika_1off:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - sgAkAwddBwsILgctCAsHCwguBy4HCwgtCAsHLgcLCAsHLgcuBwwHCwcuCAsHLggKCC4HLgcLCAsHLgcLCC4HLQgLCC0HDAcuCAsHLgcLCC0HDAcuBwsILgcLCC0ICwcLCC0ICwcuCC0ICwgKCC4HCwcuCAsHLggKCC0ICwcuBwsILgcLBy4IAAFdCFwICgguBy4HDAcLBy4HLggLBy4HDAYuCAsHCwcvBy4HDAcLCC0ICgguBwsILQgtCAsHCwguBwsHLggtCAsHLgcMBy4HDAcuBwsILQgLBy4HDActCAsHLgcMBwsILQgLBy4HLggLCAoILgcLCC0HDAcuBwsHLgcMBy4HDAYvBwsHLgcAAV4IXAgLBy4HLgcMBwsHLgcuBwwHLQgLBy4ICwcLCC4HLgcMBwsHLgcMBy4HCwcuCC0HDAcLCC4HCwcvBi4ICwcuBwwHLgcMBy0ICwgtCAsHLgcLCC0ICwgtBwwHCwcvBwoILggtCAsHCwgtCAsHLggKCC4HCwguBgwHLggKCC4HCwcuBwABXghcCAoILgcuBwwHCwcuBy4HDAcuBwwGLggLBwsHLwctCAwHCwcuCAoILgcLCC0ILQcMCAoILgcLCC0HLggLBy4HDAcuBwwHLQgLCC0HDAcuBwwHLQgLBy4ICwcLBy4ICwcuCC0ICwcMBi4ICwcuCAsHLgcLCC4HCwcuBwwHLgcLBy4IAAFdB14HCwcuBy4ICwcLBy4HLggLBy4HDAcuBwsICgguBy4HDAcLCC4HCwcuBwwHLgcuBwwGDAcuCAoILgctCAsILQcMCC0HDAcuBwsILQgLBy4HDAcuBwsHLggLBwwHLgcLBy8HLgcLCAsHLgcLBy4ICwcuBwwHLgcLCC0ICwcuBwwHLQgAAV4HXQcLBy8HLgcLBwsILgcuBwwHLgYMCC0HDAcLBy4HLggLCAoILgcLBy8HCwcuCC0ICwcLBy8HCwcuBy4HDAcuBwwHLgcLCC0ICwcuBwwHLgcLCC0ICwcuBwsICwcuCAoILggtBwwHCwcuCAsHLgcLCC4HCwcuCAsHLgcMBy0ICwcuBwAF3AAAAAA=
+kika_2on:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - sgaEAwgKCC4HCwgtCC0ICwgKCC4ICgguBy4HCwguBwwHLQgLCC0ICwgtCAsHLgcLCC0ICwgtCAsHCwguBwsILgcuCAoICwcuCAsHLggtBwwHCwguBwsHLggKCC4HLgcLCAABXghcCAsHLggtCAsHCwguBy0ICwgtCAsILQgLBwsHLwcuBwwHCwgtCAsHLggKCC4ILQcLCAsHLggKCC4HLgcMBy4HDAgtBwsILQgLCC0ICwgtCAsHLgcLCC4HCwgKCC4HDAcuBy4ICwcLCC0ICwcuCC0ICwgKCC4HCwgtCAsHLggtCAsHAAFgB10ICgguBy4HCwgLBy4ILQgLBy4ICwcuBwsICwcuBy4HDAgLBy4HCwguBwsHLwctCAsHCwguBwsILgcuBwsILQgLCC0ICwcuCAsILQgLBy4HCwgtCAsILQgLBwsILgcLCC4HLgcMBwsHLggLBy4HLgcMBwsILQgLBy4ICwcuCC0HCwgAAV4IXAgLBy4ILQgLBwsHLggtCAsILQgLBy4HDAcLBy4ILQgLCAsILQgLBy4ICwcuBy4HCwgLBy4ICwcuBy4HDAcuBwwHLgcMBy4HCwgtCAsILQcMBy4HCwguBwsICgguBwsILggtCAsHCwgtCAsILQgtCAsHCwguBwsHLggLBy4HLggLBwABXwddBwsILQgtCAsICwcuBy4ICgguBwsILQgLBwsILgcuBwwHCwguBwsHLggLBy4ILQgLBwsILgcLBy4ILQgLBy4HDAgtCAsILQcMBy4HCwgtCAsILQcMBy4HCwgLCC0ICgguCC0ICwgKCC4HCwgtCC4HCwgLBy4HCwguBwsILQgtCAsHAAFfB10HDAcuBy4HCwgLBy4ILQgLBy4HCwgtCAsICgguCC0ICwgLBy4HCwguCAoILQgtCAsICwgtCAoILgctCAsILQgLCC0ICwgtCAsILQgLBy4HCwgtCAsILQgLCAoILgcLCC4ILQcLCAsILQgKCC4ILQgLCAoILQgLBy4ICgguCC0ICggAAV4IXQcLCC0ILQgLBwsILQguCAoILQgLCC0ICwgKCC0ILgcLCAsILQgLCC0ICwcuBy4ICwcLCC0ICwcuCC0ICwgtCAsILQcMBy4HCwgtCAsILQgLBy4ICwctCAsICwcuCAoILggtCAsICgguBwsILQgtCAsICgguCAoILQkKCC0ILQgLCAAF3AAAAAA=
+kika_2off:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - sgCeAgdcBwwHLgcuBwsICwcuBy4HDAcuBwsHLggLBwsILgctCAwHCwcuBwwHLgcLCC4HLQcMCAoILQgLBy4ILQgLBy4HDAcuBwwHLQcMBy4HCwguBwsILQgLCC0HDAcLBy4ICwcuCC0HDAcLBy4HDAcuBwsILgcLCC0ICwcuBwsILQguBwsHAAFeB10ICgguBy4HCwgLBy4ILQcMBy4HCwgtCAsHCwguBy0IDAcLBy4ICwcuBwsHLggtCAsHCwguBwsHLggtCAsHLgcMBy4HCwgtCAsHLgcMBy4HCwgtCAsILQcMBwsHLggLBy4ILQgLBwsILgcLBy4HCwguBwsILQgLBy4HCwguBy4HCwcAAV8HXAgLBy4HLggKCAsHLggtCAsHLgcMBy4HCwgLBy4HLgcMBwsILgcLBy4ICgguBy4HDAcLBy4HCwguBy4HCwgtCAsHLgcMBy4HDActCAsHLggLBy4HDActCAsHCwguBwsHLwcuBwsICwcuBwsILgcLBy4HDAcuBwsILgcLCC0ILQcLCAABXgddCAoILgctCAsICwcuBy4HDActCAsHLgcMBwsILQgtCAsICwcuBwsILgcLCC0ILQgLBwwHLgcLCC0ILQcMBy4HDAcuBwsILQgLCC0ICwcuBwsILgcLBy4ICwcLCC0ICwcuCC0ICwgKCC4HCwgtCAsHLgcLCC0ICwgtBwwHLgcuBwwGAAFfB10HCwguBy0HDAcLCC4HLgcLCC0ICwcuBwwHCwcuCC0ICwcMBy4HCwcvBwsHLgcuBwwHCwgtCAsHLgcuBwwHLQgMBy4HCwgtBwwHLgcMBy0ICwgtCAsHLgcLCAsILQcMBy4ILQgLBwsILgcLBy4ICwcuBwsILQgLBy4ICgguBy4HCwcABdwAAAAAAAAAAAAA
+kika_3on:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - sgCeAgddBwsHLwYuCAsHCwguBy4HCwgtCAsHLgcMBwsHLggtCAsICwcuCAoILgcLBy4ILQgLBwwGLwcLBy4HLggLBy4HDAcuBwwHLgcLBy4HDAcuBwwHLQgLBy4HDAcLBy8HCwcvBy0ICwcMBy4HCwguBwsHLgcMBy4HCwcuCC4GDAcLCC4GAAFfB10HCwguBy4HCwgLBy4HLgcMBy4HCwgtCAsHCwguBy4HDAcLCC0ICwcuBwsILgcuBwsICwcuBwsILgctCAsHLgcMBy4HDAcuBwwHLgcLCC0ICwcuBwwHLQgLBwwHLgcLCC4HLgcMBwsHLgcMBy4HCwcvBwsHLwYMBy4HLgcLCAsHLgcAAV8GXQgLBy4ILQcMBwsHLgguBwsHLgcMBy4HDAYMBy4HLggLBwwHLgcLCC0ICwcuCC0HDAcLCC4HCwcuBy4HDAcuBwwHLgcMBy4HCwgtCAsHLgcMBy0ICwgtBwwHCwgtCAsHLwcuBwsICwcuBwsILgcLBy4HDAcuBwsILQguBwsICwcuBwABXgddBwwHLgcuBwsICwcvBi4HDAcuBwwHLgcLCAoILgcuBwwHCwgtCAsHLggKCC4HLgcLCAsHLggKCC4HLgcLCC4HCwguBwsHLgcMBy4HCwgtCAsHLgcMBy4HCwgLBy4HDAcuBy4ICwcLBy4ICwcuCAoILgcLBy4ICwcuBy4HDAcLBy4HAAFfB10HCwcuCC0ICwcLCC4HLgcMBy0HDAcuBwsICwgtCC4GDAgLBy4ICgguBwsILQgtCAsHCwcuCAsHLggtCAsHLgcMBy4HDAcuBwsILQgLBy4HDAcuBwsILQgLBwsILQgLBy8HLQgLCAsHLgcLCC0ICwgtCAsHLgcLCC4HLgcLBwsILgcABdwAAAAAAAAAAAAA
+kika_3off:
+  sequence:
+  - service: broadlink.send
+    data:
+      host: 192.168.1.37
+      packet:
+      - sgCeAgddBwsILQguBwsICwcuBy4HCwgtCAsILQgLBwsILgcuBwwHCwcuCAsHLgcLCC0ILgcLCAsHLgcLBy8HLQgLCC0ICwgtCAsHLgcMBy4HCwgtCAsHLgcMBy4HCwgLBy4HDAYvBy4HDAcLBy4ICgguBy4HDAcLBy4HDAcuBy4HDAcLCC0IAAFeB10HCwgtCC0ICwgKCC4HLgcLCC0ICwgtBwwHCwguBy0IDAcLBy4ICwcuBwsILQgtCAsICgguBwsILgctCAsILQcMCC0ICwcuBwwHLgcLCC0ICwcuCAsHLgcLCAsHLgcLBy8ILQcMBwsHLwcLBy4HLgcMBwsILgcLBy4HLggLBwsILQcAAV8HXQcLCC4HLgcLCAsHLgcuBwwHLgcLCC0ICwcLBy8HLgcMBwsHLggLBy4HCwguBy4HCwgLBy4HCwguBy4HCwgtCAsILgcMBy0ICwcuBwwHLgcLCC0HDAcuBwwHCwcuBwwHLggtCAsHDAcuBwsHLggtCAsHCwgtCAsILQgtCAsHDActCAABXghcCAsHLgcuBwwHCwcuCC0ICwcuBwsILQgLCAsHLgcuBwwHCwguBwsHLggLBy4HLgcMBwsILQgLBy4ILQcMBy4HDActCAsILQgLBy4HDAcuBwwHLQgLCC0ICwcLBy4ICwcuCC0ICwcMBy4HCwgtCC4HCwgLBy4HCwguBy4HCwcMBy4HAAFeCFwHDAcuCC0HDAcLBy4ILQcMBy4HDActCAsICwcuCC0HDAcMBy4HCwcvBwsHLggtBwwHCwcuCAsHLggtBwsILgcMBy4HCwgtCAsILQgLBy4HCwguBwsHLgcMBwsHLggLBy4ILgcLCAsHLgcLCC4HLgcLCAsHLgcLCC4HLgcLCAsHLgcABdwAAAAAAAAAAAAA
+harmony_pc:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: shortpress
+      topic: harmony/pc
+harmony_tv:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: shortpress
+      topic: harmony/tv
+harmony_ps4:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: shortpress
+      topic: harmony/ps4
+harmony_muziek:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: shortpress
+      topic: harmony/music
+harmony_spotify:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: shortpress
+      topic: harmony/spotify
+harmony_pc_long:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: longpress
+      topic: harmony/pc
+harmony_tv_long:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: longpress
+      topic: harmony/tv
+harmony_ps4_long:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: longpress
+      topic: harmony/ps4
+harmony_muziek_long:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: longpress
+      topic: harmony/music
+harmony_spotify_long:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: longpress
+      topic: harmony/spotify
+aquarium_light_day:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: aquarium_light_day
+      topic: aquarium/button/push
+aquarium_light_day_increase:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: aquarium_light_day_increase
+      topic: aquarium/button/push
+aquarium_light_day_decrease:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: aquarium_light_day_decrease
+      topic: aquarium/button/push
+aquarium_light_moonlight:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: aquarium_light_moonlight
+      topic: aquarium/button/push
+aquarium_light_lightning:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: aquarium_light_lightning
+      topic: aquarium/button/push
+aquarium_light_orange:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: aquarium_light_orange
+      topic: aquarium/button/push
+aquarium_light_rgb:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: aquarium_light_rgb
+      topic: aquarium/button/push
+ventilation_button_mode:
+  sequence:
+  - data:
+      payload: click
+      topic: ventilation/mode/push
+    service: mqtt.publish
+ventilation_button_off:
+  sequence:
+  - data:
+      payload: click
+      topic: ventilation/off/push
+    service: mqtt.publish
+selfheal_initiate:
+  sequence:
+  - data:
+      payload: selfheal_inititate
+      topic: selfheal/button/push
+    service: mqtt.publish
+selfheal_protocol:
+  sequence:
+  - data:
+      addon: core_mosquitto
+    service: hassio.addon_restart
+renew_zigbee_map:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: graphviz
+      topic: zigbee/map
+powerflow_brontosaurus_button:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: powerflow/brontosaurus/button
+powerflow_velociraptor_button:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: powerflow/velociraptor/button
+powerflow_resume_auto:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: powerflow/resume_auto
+power_brontosaurus_button:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: power/brontosaurus/button
+power_velociraptor_button:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: power/velociraptor/button
+pachy_clean:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: vacuum/button/clean
+pachy_pause:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: vacuum/button/pause
+pachy_dock:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: vacuum/button/dock
+pachy_quiet:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: vacuum/button/quiet
+pachy_stop:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: vacuum/button/stop
+harmony_light_1:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: harmony/lightbutton1
+harmony_light_2:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: harmony/lightbutton2
+harmony_socket_1:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: harmony/socketbutton1
+harmony_socket_2:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: harmony/socketbutton2
+thermostat_increase_click:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: thermostat/increase
+thermostat_decrease_click:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: thermostat/decrease
+thermostat_mode_click:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: thermostat/mode_button
+hassiocontrol_homeassistant_restart:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: hassiocontrol/homeassistant/restart
+hassiocontrol_nodered_restart:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: hassiocontrol/nodered/restart
+hassiocontrol_zigbee2mqtt_restart:
+  sequence:
+  - service: mqtt.publish
+    data:
+      payload: click
+      topic: hassiocontrol/zigbee2mqtt/restart

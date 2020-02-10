@@ -1,0 +1,8 @@
+title: Hassio
+id: hassio
+theme: dark-mode
+icon: mdi:home-assistant
+cards:
+  - !include /config/lovelace/cards/025_adguard.yaml
+  - !include /config/lovelace/cards/029_hass_control.yaml
+  - !include /config/lovelace/cards/032_power_consumption_v2.yaml

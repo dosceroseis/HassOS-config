@@ -1,0 +1,13 @@
+title: Overview
+id: overview
+icon: mdi:view-dashboard-variant
+cards:
+ - !include /config/lovelace/cards/001_presence_alarm.yaml
+ - !include /config/lovelace/cards/005_media_center.yaml
+ - !include /config/lovelace/cards/006_laundry.yaml
+ - !include /config/lovelace/cards/016_simple_thermostat.yaml
+ - !include /config/lovelace/cards/007_trash_pickup.yaml
+ - !include /config/lovelace/cards/008_sensors.yaml
+ - !include /config/lovelace/cards/017_ventilation.yaml
+ - !include /config/lovelace/cards/009_light_control_rooms.yaml
+ - !include /config/lovelace/cards/022_vacuum.yaml

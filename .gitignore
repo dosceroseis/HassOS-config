@@ -6,6 +6,17 @@
 !*.yaml
 !.gitignore
 !*.md
+!/lovelace
+!/lovelace/cards
+!/configfiles
+!/custom_components
+/configfiles/anniversaries.yaml
+/esphome
+/glances
+/node-red
+/deps
+/notebooks
+/tts
 
 # Ignore folders.
 .storage

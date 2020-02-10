@@ -1,0 +1,54 @@
+type: custom:vertical-style-card
+title: Powerconsumption
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      name: Washer
+      entities:
+      - entity: sensor.power_consumption_washer
+        name: Power
+        color: var(--icon-color-amber)
+      - entity: sensor.power_consumption_washer_cost
+        name: Cost
+        show_state: true
+        show_graph: false
+        show_line: false
+        show_points: false
+        show_legend: false
+        show_fill: false
+      line_color: var(--icon-color-amber)
+      icon: mdi:flash
+      aggregate_func: max
+      group_by: date
+      show:
+        graph: bar
+      hours_to_show: 168
+      hour24: true
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      name: Washer
+      entities:
+      - entity: sensor.power_consumption_washer
+        name: Power
+        color: var(--icon-color-amber)
+      - entity: sensor.power_consumption_washer_cost
+        name: Cost
+        show_state: true
+        show_graph: false
+        show_line: false
+        show_points: false
+        show_legend: false
+        show_fill: false
+      line_color: var(--icon-color-amber)
+      icon: mdi:flash
+      aggregate_func: max
+      group_by: date
+      show:
+        graph: bar
+      hours_to_show: 168
+      hour24: true

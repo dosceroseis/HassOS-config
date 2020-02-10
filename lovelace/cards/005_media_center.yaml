@@ -1,0 +1,174 @@
+type: custom:vertical-style-card
+title: Media Center
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  -  type: picture
+     image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        show_name: false
+        show_label: false
+        color_type: card
+        entity: sensor.mc_activity
+        tap_action:
+         action: call-service
+         service: script.harmony_pc
+        hold_action:
+         action: call-service
+         service: script.harmony_pc_long
+        state:
+        - value: 'off'
+          color: var(--element-accent-color)
+          icon: mdi:youtube-tv
+        - value: 'Watch PC'
+          color: var(--icon-color-green)
+          icon: mdi:youtube-tv
+        - value: 'Watch TV'
+          color: var(--element-accent-color)
+          icon: mdi:youtube-tv
+        - value: 'PS4'
+          color: var(--element-accent-color)
+          icon: mdi:youtube-tv
+        - value: 'Muziek Luisteren'
+          color: var(--element-accent-color)
+          icon: mdi:youtube-tv
+        - value: 'Spotify Luisteren'
+          color: var(--element-accent-color)
+          icon: mdi:youtube-tv
+      - type: "custom:button-card"
+        show_name: false
+        show_label: false
+        color_type: card
+        entity: sensor.mc_activity
+        tap_action:
+         action: call-service
+         service: script.harmony_tv
+        hold_action:
+         action: call-service
+         service: script.harmony_tv_long
+        state:
+        - value: 'off'
+          color: var(--element-accent-color)
+          icon: mdi:television-classic
+        - value: 'Watch PC'
+          color: var(--element-accent-color)
+          icon: mdi:television-classic
+        - value: 'Watch TV'
+          color: var(--icon-color-green)
+          icon: mdi:television-classic
+        - value: 'PS4'
+          color: var(--element-accent-color)
+          icon: mdi:television-classic
+        - value: 'Muziek Luisteren'
+          color: var(--element-accent-color)
+          icon: mdi:television-classic
+        - value: 'Spotify Luisteren'
+          color: var(--element-accent-color)
+          icon: mdi:television-classic
+      - type: "custom:button-card"
+        show_name: false
+        show_label: false
+        color_type: card
+        entity: sensor.mc_activity
+        tap_action:
+         action: call-service
+         service: script.harmony_ps4
+        hold_action:
+         action: call-service
+         service: script.harmony_ps4_long
+        state:
+        - value: 'off'
+          color: var(--element-accent-color)
+          icon: mdi:google-controller
+        - value: 'Watch PC'
+          color: var(--element-accent-color)
+          icon: mdi:google-controller
+        - value: 'Watch TV'
+          color: var(--element-accent-color)
+          icon: mdi:google-controller
+        - value: 'PS4'
+          color: var(--icon-color-amber)
+          icon: mdi:google-controller
+        - value: 'Muziek Luisteren'
+          color: var(--element-accent-color)
+          icon: mdi:google-controller
+        - value: 'Spotify Luisteren'
+          color: var(--element-accent-color)
+          icon: mdi:google-controller
+      - type: "custom:button-card"
+        show_name: false
+        show_label: false
+        color_type: card
+        entity: sensor.mc_activity
+        tap_action:
+         action: call-service
+         service: script.harmony_muziek
+        hold_action:
+         action: call-service
+         service: script.harmony_muziek_long
+        state:
+        - value: 'off'
+          color: var(--element-accent-color)
+          icon: mdi:album
+        - value: 'Watch PC'
+          color: var(--element-accent-color)
+          icon: mdi:album
+        - value: 'Watch TV'
+          color: var(--element-accent-color)
+          icon: mdi:album
+        - value: 'PS4'
+          color: var(--element-accent-color)
+          icon: mdi:album
+        - value: 'Muziek Luisteren'
+          color: var(--icon-color-green)
+          icon: mdi:album
+        - value: 'Spotify Luisteren'
+          color: var(--element-accent-color)
+          icon: mdi:album
+      - type: "custom:button-card"
+        show_name: false
+        show_label: false
+        color_type: card
+        entity: sensor.mc_activity
+        tap_action:
+         action: call-service
+         service: script.harmony_spotify
+        hold_action:
+         action: call-service
+         service: script.harmony_spotify_long
+        state:
+        - value: 'off'
+          color: var(--element-accent-color)
+          icon: mdi:spotify
+        - value: 'Watch PC'
+          color: var(--element-accent-color)
+          icon: mdi:spotify
+        - value: 'Watch TV'
+          color: var(--element-accent-color)
+          icon: mdi:spotify
+        - value: 'PS4'
+          color: var(--element-accent-color)
+          icon: mdi:spotify
+        - value: 'Muziek Luisteren'
+          color: var(--element-accent-color)
+          icon: mdi:spotify
+        - value: 'Spotify Luisteren'
+          color: var(--icon-color-green)
+          icon: mdi:spotify
+  - type: horizontal-stack
+    cards:
+    -  type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+      - type: "custom:bignumber-card"
+        entity: sensor.mc_activity_readable
+        title: Current activity
+        scale: 15px
+  - type: picture
+    image: /local/divider.png

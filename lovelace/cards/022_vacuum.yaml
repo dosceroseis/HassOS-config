@@ -1,0 +1,211 @@
+type: custom:vertical-style-card
+title: Pachy
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        icon: mdi:robot-vacuum
+        name: 'Pachycephalosaurus'
+        show_name: false
+        show_label: true
+        show_state: true
+        action: more_info
+        color: var(--icon-color-amber)
+        color_off: var(--icon-off-color)
+        color_type: icon
+        layout: icon_state_name2nd
+        entity: vacuum.xiaomi_vacuum_cleaner
+        label_template: >
+          return states['sensor.vacuum_bat_state'].state
+        style:
+        - color: var(--icon-off-color)
+        state:
+        - value: 'docked'
+          color: var(--icon-color-blue)
+        - value: 'cleaning'
+          color: var(--icon-color-green)
+        - value: 'paused'
+          color: var(--icon-color-orange)
+        - value: 'returning'
+          color: var(--icon-color-light-blue)
+        - value: 'idle'
+          color: var(--icon-color-orange)
+        - value: 'unavailable'
+          color: var(--icon-off-color)
+        - value: 'error'
+          color: var(--icon-color-red)
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        icon: mdi:calendar-blank
+        show_name: false
+        show_label: false
+        show_state: false
+        color_type: card
+        entity: input_boolean.vacuum_autorun
+        tap_action:
+            action: toggle
+        style:
+          - color: var(--icon-off-color)
+        state:
+        - value: 'on'
+          color: var(--icon-color-green)
+          icon: mdi:calendar-check
+        - value: 'off'
+          color: var(--icon-color-red)
+          icon: mdi:calendar-remove
+      - type: "custom:button-card"
+        icon: mdi:gas-station
+        show_name: false
+        show_label: false
+        color_type: card
+        entity: vacuum.xiaomi_vacuum_cleaner
+        tap_action:
+          action: call-service
+          service: script.pachy_dock
+        style:
+        - color: var(--icon-off-color)
+        state:
+        - value: 'docked'
+          color: var(--icon-color-blue)
+          icon: mdi:ev-station
+        - value: 'cleaning'
+          color: var(--element-accent-color)
+        - value: 'charging'
+          color: var(--element-accent-color)
+        - value: 'paused'
+          color: var(--element-accent-color)
+        - value: 'returning'
+          color: var(--icon-color-light-blue)
+          icon: mdi:ev-station
+        - value: 'idle'
+          color: var(--element-accent-color)
+        - value: 'unavailable'
+          color: var(--element-accent-color)
+        - value: 'error'
+          color: var(--icon-color-red)
+      - type: "custom:button-card"
+        icon: mdi:broom
+        show_name: false
+        show_label: false
+        color_type: card
+        entity: vacuum.xiaomi_vacuum_cleaner
+        tap_action:
+          action: call-service
+          service: script.pachy_clean
+        style:
+        - color: var(--icon-off-color)
+        state:
+        - value: 'docked'
+          color: var(--element-accent-color)
+        - value: 'cleaning'
+          color: var(--icon-color-green)
+        - value: 'charging'
+          color: var(--element-accent-color)
+        - value: 'paused'
+          color: var(--element-accent-color)
+        - value: 'returning'
+          color: var(--element-accent-color)
+        - value: 'idle'
+          color: var(--element-accent-color)
+        - value: 'unavailable'
+          color: var(--element-accent-color)
+        - value: 'error'
+          color: var(--icon-color-red)
+      - type: "custom:button-card"
+        icon: mdi:pause-circle
+        show_name: false
+        show_label: false
+        color_type: card
+        entity: vacuum.xiaomi_vacuum_cleaner
+        tap_action:
+          action: call-service
+          service: script.pachy_pause
+        style:
+        - color: var(--icon-off-color)
+        state:
+        - value: 'docked'
+          color: var(--element-accent-color)
+        - value: 'cleaning'
+          color: var(--element-accent-color)
+        - value: 'charging'
+          color: var(--element-accent-color)
+        - value: 'paused'
+          color: var(--icon-color-orange)
+          icon: mdi:play-circle
+        - value: 'returning'
+          color: var(--element-accent-color)
+        - value: 'idle'
+          color: var(--icon-color-orange)
+          icon: mdi:play-circle
+        - value: 'unavailable'
+          color: var(--element-accent-color)
+        - value: 'error'
+          color: var(--icon-color-red)
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: custom:bar-card
+      title: Battery
+      title_position: inside
+      unit_of_measurement: "%"
+      entity: sensor.pachy_charge
+      padding: 2px
+      indicator: right
+      card_style:
+      - box-shadow: none
+      title_style:
+      - text-align: left
+      - font-size: 16px
+      bar_style:
+      - align-items: left
+      font-size: 8px
+      severity:
+      - value: 15
+        color: var(--icon-color-deep-red)
+      - value: 25
+        color: var(--icon-color-red)
+      - value: 35
+        color: var(--icon-color-orange)
+      - value: 50
+        color: var(--icon-color-yellow)
+      - value: 75
+        color: var(--icon-color-light-green)
+      - value: 100
+        color: var(--icon-color-green)
+    - type: "custom:bignumber-card"
+      title: Runtime
+      scale: 15px
+      entity: sensor.vacuum_ontime
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:bignumber-card"
+      title: Last Run
+      scale: 15px
+      entity: sensor.vacuum_last_run
+    - type: "custom:bignumber-card"
+      title: Area Cleaned
+      scale: 15px
+      entity: sensor.pachy_cleaned_area
+      style:
+      - text-transform: capitalize
