@@ -1,0 +1,79 @@
+custom_header:
+ compact_mode: true
+ menu: overflow
+ hide_help: true
+ options: clock
+ voice: hide
+ clock_format: 24
+ exceptions:
+ - conditions:
+     user: K4tr1n
+   config:
+     options: clock
+     clock_format: 24
+     hide_tabs: 0,1,2,3
+ - conditions:
+     user: D3lta3
+   config:
+     options: clock
+     clock_format: 24
+     hide_tabs: 4,5
+ - conditions:
+     user: d3lta3
+   config:
+     options: clock
+     lock_format: 24
+     hide_tabs: 4,5
+
+resources:
+  - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: /local/button-card.js?v=0.0.3
+    type: module
+  - url: /local/vertical-style-card.js?v=0.1.1
+    type: js
+  - url: /local/card-tools.js?v=c885db
+    type: js
+  - url: /local/card-modder.js?v=1
+    type: js
+  - url: /local/tracker-card.js?v=1.2.6
+    type: js
+  - url: /local/bignumber-card.js?v=0.0.1
+    type: js
+  - url: /local/doublevalue-card.js?v=0.0.1
+    type: js
+  - url: /local/triplevalue-card.js?v=0.0.6
+    type: js
+  - url: /local/singlevalue-card.js?v=0.1
+    type: js
+  - url: /local/bar-card.js
+    type: js
+  - url: /local/flex-table-card.js
+    type: js
+  - url: /local/layout-card.js
+    type: js
+  - url: /local/simple-thermostat.js?v=15
+    type: module
+  - url: /community_plugin/decluttering-card/decluttering-card.js
+    type: module
+  - url: /local/slider-entity-row.js
+    type: module
+  - url: /community_plugin/lovelace-card-mod/card-mod.js
+    type:
+  - url: /local/weather-card.js?v=7.2
+    type: module
+  - url: /community_plugin/custom-header/custom-header.js
+    type: module
+  - url: /local/thermostat-card.js?v=3
+    type: module
+  - url: /community_plugin/flex-horseshoe-card/flex-horseshoe-card.js
+    type: module
+
+title: Jurassic
+views:
+  - !include /config/lovelace/00_overview.yaml
+  - !include /config/lovelace/20_lights_switches.yaml
+  - !include /config/lovelace/25_sensors.yaml
+  - !include /config/lovelace/30_hassio.yaml
+  - !include /config/lovelace/40_overview_short.yaml
+  - !include /config/lovelace/50_lights_switches_short.yaml

@@ -1,0 +1,82 @@
+- id: '1553672084892'
+  alias: Nieuwe automatisering
+  trigger:
+  - entity_id: sensor.node_red
+    from: OK
+    platform: state
+    to: unknown
+  condition: []
+  action:
+  - data:
+      addon: a0d7b954_nodered
+    service: hassio.addon_restart
+  - data:
+      addon: core_mosquitto
+    service: hassio.addon_restart
+- id: '1553840795096'
+  alias: Restart NodeRed
+  trigger:
+  - entity_id: sensor.node_red
+    from: OK
+    platform: state
+    to: unknown
+  condition: []
+  action:
+  - data:
+      addon: core_mosquitto
+    service: hassio.addon_restart
+- id: '1553928957398'
+  alias: Nieuwe automatisering
+  trigger:
+  - entity_id: sensor.node_red
+    from: OK
+    platform: state
+    to: unknown
+  condition: []
+  action:
+  - data:
+      addon: core_mosquitto
+    service: hassio.addon_restart
+  - data:
+      addon: 7ad98f9c_zigbee2mqtt
+    service: hassio.addon_restart
+  - data:
+      addon: a0d7b954_nodered
+    service: hassio.addon_restart
+- id: '1554963190654'
+  alias: Set theme at startup
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      name: midnight
+    service: frontend.set_theme
+- id: '1558079090706'
+  alias: Set Theme to Midnight
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      name: midnight
+    service: frontend.set_theme
+- id: '1564400413184'
+  alias: webhook
+  trigger:
+  - platform: webhook
+    webhook_id: plex-events
+  condition: []
+  action:
+  - event: ''
+    event_data: {}
+- id: '1564400486653'
+  alias: Test
+  trigger:
+  - platform: webhook
+    webhook_id: test
+  condition: []
+  action:
+  - service: zigbee2mqtt_networkmap.update

@@ -1,0 +1,154 @@
+homeassistant:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: !secret unit_system
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+
+history:
+
+system_health:
+
+recorder:
+  db_url: !secret recorder_string
+  
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    mode: daily
+
+#mqtt:
+#  discovery: true
+#  broker: core-mosquitto
+#  birth_message:
+#    topic: 'hass/status'
+#    payload: 'online'
+#  will_message:
+#    topic: 'hass/status'
+#    payload: 'offline'
+
+lovelace:
+  mode: yaml
+
+logger:
+  default: warning
+
+frontend:
+  themes: !include themes.yaml
+
+config:
+
+http:
+  trusted_proxies: 
+    - !secret trusted_proxies_1
+    - !secret trusted_proxies_2
+    - 127.0.0.1
+    - 172.20.0.3
+    - ::1
+  use_x_forwarded_for: true
+  base_url: !secret http_base_url
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+
+webostv:
+  host: !secret lgwebostv_host_ip
+  name: Living Room TV
+
+evohome:
+  username: !secret evohome_username
+  password: !secret evohome_password
+  scan_interval: 300
+
+updater:
+
+discovery:
+
+conversation:
+
+remote:
+  - platform: harmony
+    name: Woonkamer
+    host: !secret harmony_host_ip
+  - platform: huesensor
+
+homeconnect:
+  client_id: !secret homeconnect_client_id
+  client_secret: !secret homeconnect_client_secret
+    
+logbook:
+  exclude:
+    entities:
+      - sensor.node_red
+      - input_boolean.node_red
+netatmo:
+  client_id: !secret netatmo_client_id
+  client_secret: !secret netatmo_client_secret
+sun:
+
+tts:
+  - platform: google_translate
+    service_name: google_say
+
+# influxdb:
+#   port: !secret influxdb_port
+#   database: !secret influxdb_database
+#   username: !secret influxdb_user
+#   password: !secret influxdb_password
+#   max_retries: 3
+#   default_measurement: state
+
+cloud:
+
+mobile_app:
+
+panel_iframe:
+  energy:
+    title: 'Energy'
+    icon: mdi:chart-timeline
+    url: !secret dsmr_url
+
+tplink:
+  discovery: false
+  switch:
+  - host: !secret tplink_host_ip_1
+  - host: !secret tplink_host_ip_2
+  - host: !secret tplink_host_ip_3
+  - host: !secret tplink_host_ip_4
+
+#vacuum:
+#  - platform: xiaomi_miio
+#    host: 192.168.1.25
+#    token: '344961356d583036426c366966347135'
+
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
+  track_new_calendar: True
+
+hacs:
+  token: !secret my_github_access_token
+
+emulated_hue:
+  host_ip: !secret emulated_hue_host_ip
+  listen_port: !secret emulated_hue_listen_port
+  off_maps_to_on_domains:
+    - script
+  expose_by_default: true
+  exposed_domains:
+    - script
+
+group: !include configfiles/groups.yaml
+automation: !include configfiles/automations.yaml
+script: !include configfiles/scripts.yaml
+switch: !include configfiles/switch.yaml
+camera: !include configfiles/cameras.yaml
+sensor: !include configfiles/sensor.yaml
+input_boolean: !include configfiles/input_boolean.yaml
+input_select: !include configfiles/input_select.yaml
+device_tracker: !include configfiles/device_tracker.yaml
+binary_sensor: !include configfiles/binary_sensor.yaml
+zone: !include configfiles/zone.yaml
+anniversaries: !include configfiles/anniversaries.yaml
+utility_meter: !include configfiles/utility_meter.yaml
