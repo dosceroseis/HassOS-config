@@ -722,7 +722,7 @@
     dsmr_hourly_power:
       friendly_name: Hourly Power
       unit_of_measurement: kWh
-      value_template: "{{ states('sensor.dsmr_hourly_power_offpeak')|float + states('sensor.hourly_power_peak')|float }}"
+      value_template: "{{ states('sensor.dsmr_hourly_power_offpeak')|float + states('sensor.dsmr_hourly_power_peak')|float }}"
     dsmr_daily_power:
       friendly_name: Daily Power
       unit_of_measurement: kWh
@@ -808,6 +808,16 @@
         {% else %}
           {{ states('sensor.dsmr_reading_electricity_currently_delivered')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
         {% endif %}
+    dsmr_current_electricity_watts:
+      friendly_name: Current Electricity Watt
+      unit_of_measurement: Watt
+      value_template: >-
+        {{ states('sensor.dsmr_reading_electricity_currently_delivered')|float * 1000 }}
+    dsmr_current_gas_cost:
+      friendly_name: Current Gas Cost
+      unit_of_measurement: €/h
+      value_template: >-
+        {{ (states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12) * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float }}
 - platform: statistics
   entity_id: sensor.0x00158d0002320730_humidity
   name: bathroom_hum_mean_30

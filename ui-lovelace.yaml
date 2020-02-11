@@ -66,7 +66,9 @@ resources:
     type: module
   - url: /local/thermostat-card.js?v=3
     type: module
-  - url: /community_plugin/flex-horseshoe-card/flex-horseshoe-card.js
+  - url: /community_plugin/flex-horseshoe-card/flex-horseshoe-card.js?v=1
+    type: module
+  - url: /community_plugin/lovelace-layout-card/layout-card.js
     type: module
 
 title: Jurassic
