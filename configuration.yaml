@@ -42,11 +42,12 @@ config:
 
 http:
   trusted_proxies: 
-    - !secret trusted_proxies_1
-    - !secret trusted_proxies_2
-    - 127.0.0.1
-    - 172.20.0.3
-    - ::1
+    - !secret trusted_proxy_1
+    - !secret trusted_proxy_2
+    - !secret trusted_proxy_3
+    - !secret trusted_proxy_4
+    - !secret trusted_proxy_5
+    - !secret trusted_proxy_6
   use_x_forwarded_for: true
   base_url: !secret http_base_url
   ip_ban_enabled: True
@@ -67,11 +68,10 @@ discovery:
 
 conversation:
 
-remote:
-  - platform: harmony
-    name: Woonkamer
-    host: !secret harmony_host_ip
-  - platform: huesensor
+#remote:
+#  - platform: harmony
+#    name: Woonkamer
+#    host: !secret harmony_host_ip
 
 homeconnect:
   client_id: !secret homeconnect_client_id

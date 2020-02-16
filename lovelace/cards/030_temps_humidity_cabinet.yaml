@@ -8,7 +8,7 @@ cards:
   cards:
     - type: custom:mini-graph-card
       entities:
-      - sensor.0x00158d0001f58a2a_temperature
+      - sensor.xiaomi_tempsensor_ps4
       name: PS4
       align_header: left
       align_state: left
@@ -19,7 +19,7 @@ cards:
       - var(--icon-color-red)
     - type: custom:mini-graph-card
       entities:
-      - sensor.0x00158d0001f58a2a_humidity
+      - sensor.xiaomi_humiditysensor_ps4
       name: PS4
       align_header: left
       align_state: left
@@ -32,7 +32,7 @@ cards:
   cards:
     - type: custom:mini-graph-card
       entities:
-      - sensor.0x00158d0001f58f97_temperature
+      - sensor.xiaomi_tempsensor_velo
       name: Velociraptor
       align_header: left
       align_state: left
@@ -43,7 +43,7 @@ cards:
       - var(--icon-color-red)
     - type: custom:mini-graph-card
       entities:
-      - sensor.0x00158d0001f58f97_humidity
+      - sensor.xiaomi_humiditysensor_velo
       name: Velociraptor
       align_header: left
       align_state: left

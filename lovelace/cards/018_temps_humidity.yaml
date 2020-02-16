@@ -8,7 +8,7 @@ cards:
   cards:
     - type: custom:mini-graph-card
       entities:
-      - sensor.darksky_temp_outside
+      -  sensor.netatmo_home_outside_temperature
       name: Outside
       align_header: left
       align_state: left
@@ -19,7 +19,7 @@ cards:
       - var(--icon-color-red)
     - type: custom:mini-graph-card
       entities:
-      - sensor.darksky_humidity_outside
+      -  sensor.netatmo_home_outside_humidity
       name: Outside
       align_header: left
       align_state: left
@@ -32,7 +32,7 @@ cards:
   cards:
     - type: custom:mini-graph-card
       entities:
-      - sensor.family_room_thermostat_temperature
+      - sensor.netatmo_home_inside_temperature
       name: Livingroom
       align_header: left
       align_state: left
@@ -43,7 +43,7 @@ cards:
       - var(--icon-color-red)
     - type: custom:mini-graph-card
       entities:
-      - sensor.family_room_thermostat_humidity
+      - sensor.netatmo_home_inside_humidity
       name: Livingroom
       align_header: left
       align_state: left

@@ -18,7 +18,7 @@ cards:
         tap_action: 
          action: more-info
         color_type: icon
-        entity: binary_sensor.0x00158d00022d18d8_contact
+        entity: binary_sensor.xiaomi_doorsensor_frontdoor
         style:
          - font-size: 10px
          - text-transform: capitalize
@@ -110,7 +110,7 @@ cards:
         color: var(--icon-color-amber)
         color_off: var(--icon-off-color)
         color_type: icon
-        entity: input_boolean.motion_hallway
+        entity: binary_sensor.xiaomi_motionsensor_stick
         style:
          - font-size: 10px
          - text-transform: capitalize
@@ -137,6 +137,60 @@ cards:
         color_off: var(--icon-off-color)
         color_type: icon
         entity: binary_sensor.hue_motion_sensor_washroom
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+    - type: horizontal-stack
+      cards:
+      - type: "custom:button-card"
+        icon: mdi:walk
+        name: Toilet
+        tap_action: 
+         action: more-info
+        color: var(--icon-color-amber)
+        color_off: var(--icon-off-color)
+        color_type: icon
+        entity: binary_sensor.hue_motion_sensor_toilet
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+      - type: "custom:button-card"
+        icon: mdi:walk
+        name: Bathroom
+        tap_action: 
+         action: more-info
+        color: var(--icon-color-amber)
+        color_off: var(--icon-off-color)
+        color_type: icon
+        entity: binary_sensor.tradfri_motionsensor_bathroom
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+      - type: "custom:button-card"
+        icon: mdi:walk
+        name: Attic
+        tap_action: 
+         action: more-info
+        color: var(--icon-color-amber)
+        color_off: var(--icon-off-color)
+        color_type: icon
+        entity: binary_sensor.tradfri_motionsensor_attic
+        style:
+         - font-size: 10px
+         - text-transform: capitalize
+         - background-color: var(--element-accent-color)
+      - type: "custom:button-card"
+        icon: mdi:walk
+        name: Garage
+        tap_action: 
+         action: more-info
+        color: var(--icon-color-amber)
+        color_off: var(--icon-off-color)
+        color_type: icon
+        entity: input_boolean.motion_garage
         style:
          - font-size: 10px
          - text-transform: capitalize

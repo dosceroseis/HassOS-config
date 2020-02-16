@@ -189,60 +189,6 @@ harmony_spotify_long:
     data:
       payload: longpress
       topic: harmony/spotify
-aquarium_light_day:
-  sequence:
-  - service: mqtt.publish
-    data:
-      payload: aquarium_light_day
-      topic: aquarium/button/push
-aquarium_light_day_increase:
-  sequence:
-  - service: mqtt.publish
-    data:
-      payload: aquarium_light_day_increase
-      topic: aquarium/button/push
-aquarium_light_day_decrease:
-  sequence:
-  - service: mqtt.publish
-    data:
-      payload: aquarium_light_day_decrease
-      topic: aquarium/button/push
-aquarium_light_moonlight:
-  sequence:
-  - service: mqtt.publish
-    data:
-      payload: aquarium_light_moonlight
-      topic: aquarium/button/push
-aquarium_light_lightning:
-  sequence:
-  - service: mqtt.publish
-    data:
-      payload: aquarium_light_lightning
-      topic: aquarium/button/push
-aquarium_light_orange:
-  sequence:
-  - service: mqtt.publish
-    data:
-      payload: aquarium_light_orange
-      topic: aquarium/button/push
-aquarium_light_rgb:
-  sequence:
-  - service: mqtt.publish
-    data:
-      payload: aquarium_light_rgb
-      topic: aquarium/button/push
-ventilation_button_mode:
-  sequence:
-  - data:
-      payload: click
-      topic: ventilation/mode/push
-    service: mqtt.publish
-ventilation_button_off:
-  sequence:
-  - data:
-      payload: click
-      topic: ventilation/off/push
-    service: mqtt.publish
 selfheal_initiate:
   sequence:
   - data:
@@ -254,12 +200,6 @@ selfheal_protocol:
   - data:
       addon: core_mosquitto
     service: hassio.addon_restart
-renew_zigbee_map:
-  sequence:
-  - service: mqtt.publish
-    data:
-      payload: graphviz
-      topic: zigbee/map
 powerflow_brontosaurus_button:
   sequence:
   - service: mqtt.publish

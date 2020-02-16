@@ -81,8 +81,21 @@ vacuum_ran_today:
   initial: off
 showering_bathroom:
   name: showering_bathroom
-motion_hallway:
-  name: motion_hallway
-  initial: off
 motion_hallway_toggle:
   name: motion_hallway_toggle
+motion_controlled_hallway:
+  name: motion_controlled_hallway
+motion_controlled_attic:
+  name: motion_controlled_attic
+motion_attic_toggle:
+  name: motion_attic_toggle
+motion_controlled_bathroom:
+  name: motion_controlled_bathroom
+motion_bathroom_toggle:
+  name: motion_bathroom_toggle
+motion_garage:
+  name: motion_garage
+motion_controlled_garage:
+  name: motion_controlled_garage
+motion_garage_toggle:
+  name: motion_garage_toggle

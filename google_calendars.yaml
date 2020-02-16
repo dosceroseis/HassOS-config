@@ -1,6 +1,6 @@
 - cal_id: laurensvda@gmail.com
   entities:
-  - device_id: laurensvdagmailcom
+  - device_id: laurensvda@gmail.com
     ignore_availability: true
     name: laurensvda@gmail.com
     track: true

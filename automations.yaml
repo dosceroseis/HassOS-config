@@ -63,20 +63,5 @@
   - data:
       name: midnight
     service: frontend.set_theme
-- id: '1564400413184'
-  alias: webhook
-  trigger:
-  - platform: webhook
-    webhook_id: plex-events
-  condition: []
-  action:
-  - event: ''
-    event_data: {}
-- id: '1564400486653'
-  alias: Test
-  trigger:
-  - platform: webhook
-    webhook_id: test
-  condition: []
-  action:
-  - service: zigbee2mqtt_networkmap.update
+
+

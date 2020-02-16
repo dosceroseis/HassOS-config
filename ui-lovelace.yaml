@@ -34,8 +34,6 @@ resources:
     type: js
   - url: /local/card-tools.js?v=c885db
     type: js
-  - url: /local/card-modder.js?v=1
-    type: js
   - url: /local/tracker-card.js?v=1.2.6
     type: js
   - url: /local/bignumber-card.js?v=0.0.1
@@ -69,6 +67,10 @@ resources:
   - url: /community_plugin/flex-horseshoe-card/flex-horseshoe-card.js?v=1
     type: module
   - url: /community_plugin/lovelace-layout-card/layout-card.js
+    type: module
+  - url: /local/mini-graph-card-stripped.js?v=5
+    type: module
+  - url: /local/card-mod.js
     type: module
 
 title: Jurassic

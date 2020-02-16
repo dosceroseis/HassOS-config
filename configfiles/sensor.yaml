@@ -3,6 +3,31 @@
   modules:
     - Home-Inside
     - Home-Outside
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+    - type: disk_use
+    - type: disk_free
+    - type: memory_use_percent
+    - type: memory_use
+    - type: memory_free
+    - type: swap_use_percent
+    - type: swap_use
+    - type: swap_free
+    - type: load_1m
+    - type: load_5m
+    - type: load_15m
+    - type: network_in
+    - type: network_out
+    - type: throughput_network_in
+    - type: throughput_network_out
+    - type: packets_in
+    - type: packets_out
+    - type: ipv4_address
+    - type: ipv6_address
+    - type: processor_use
+    - type: process
+    - type: last_boot
 - platform: dsmr_reader
 - platform: time_date
   display_options:
@@ -687,10 +712,6 @@
       friendly_name: "Climate Bathroom Target Temperature"
       value_template: "{{ state_attr('climate.badkamer1v', 'temperature') }}"
       unit_of_measurement: '°C'
-    tp_link_washer_total_kwh:
-      friendly_name: "Washingmachine Total Power Used"
-      value_template: "{{ state_attr('switch.tp_link_washingmachine', 'total_energy_kwh') }}"
-      unit_of_measurement: 'kWh'
     tp_link_mediacenter_total_kwh:
       friendly_name: "Mediacenter Total Power Used"
       value_template: "{{ state_attr('switch.tp_link_mediacenter', 'total_energy_kwh') }}"
@@ -703,22 +724,93 @@
       friendly_name: "Brontosaurus Total Power Used"
       value_template: "{{ state_attr('switch.tp_link_brontosaurus', 'total_energy_kwh') }}"
       unit_of_measurement: 'kWh'
+    tp_link_washer_total_kwh:
+      friendly_name: "Washingmachine Total Power Used"
+      value_template: "{{ state_attr('switch.tp_link_washingmachine', 'total_energy_kwh') }}"
+      unit_of_measurement: 'kWh'
+    tp_link_washer_hourly_power:
+      friendly_name: Washingmachine Hourly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.washer_power_hourly_peak')|float + states('sensor.washer_power_hourly_offpeak')|float }}"
+    tp_link_washer_hourly_power_cost:
+      friendly_name: Washingmachine Hourly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.washer_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.washer_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_washer_daily_power:
+      friendly_name: Washingmachine Daily Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.washer_power_daily_peak')|float + states('sensor.washer_power_daily_offpeak')|float }}"
+    tp_link_washer_daily_power_cost:
+      friendly_name: Washingmachine Daily Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.washer_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.washer_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_washer_weekly_power:
+      friendly_name: Washingmachine Weekly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.washer_power_weekly_peak')|float + states('sensor.washer_power_weekly_offpeak')|float }}"
+    tp_link_washer_weekly_power_cost:
+      friendly_name: Washingmachine Weekly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.washer_power_weekly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.washer_power_weekly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_washer_monthly_power:
+      friendly_name: Washingmachine Monthly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.washer_power_monthly_peak')|float + states('sensor.washer_power_weekly_offpeak')|float }}"
+    tp_link_washer_monthly_power_cost:
+      friendly_name: Washingmachine Monthly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.washer_power_monthly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.washer_power_monthly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
     tp_link_washer_current_load:
       friendly_name: "Washingmachine Current Load"
       value_template: "{{ state_attr('switch.tp_link_washingmachine', 'current_power_w') }}"
       unit_of_measurement: 'Watts'
+    tp_link_washer_current_cost:
+      friendly_name: "Washer Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_washer', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_washer', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
     tp_link_mediacenter_current_load:
       friendly_name: "Mediacenter Current Load"
       value_template: "{{ state_attr('switch.tp_link_mediacenter', 'current_power_w') }}"
-      unit_of_measurement: 'Watts'
+    tp_link_mediacenter_current_cost:
+      friendly_name: "Mediacenter Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_mediacenter', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_mediacenter', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
     tp_link_coffeemachine_current_load:
       friendly_name: "Coffeemachine Current Load"
       value_template: "{{ state_attr('switch.tp_link_coffeemachine', 'current_power_w') }}"
       unit_of_measurement: 'Watts'
+    tp_link_coffeemachine_current_cost:
+      friendly_name: "Coffeemachine Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_coffeemachine', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_coffeemachine', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
     tp_link_brontosaurus_current_load:
       friendly_name: "Brontosaurus Current Load"
       value_template: "{{ state_attr('switch.tp_link_brontosaurus', 'current_power_w') }}"
       unit_of_measurement: 'Watts'
+    tp_link_brontosaurus_current_cost:
+      friendly_name: "Brontosaurus Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_brontosaurus', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_brontosaurus', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
     dsmr_hourly_power:
       friendly_name: Hourly Power
       unit_of_measurement: kWh
@@ -744,7 +836,7 @@
       unit_of_measurement: €
       value_template: "{{ states('sensor.dsmr_hourly_power_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}"
     dsmr_hourly_gas_cost:
-      friendly_name: Hourly Power Peak Cost
+      friendly_name: Hourly Gas Cost
       unit_of_measurement: €
       value_template: "{{ states('sensor.dsmr_hourly_gas')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float }}"
     dsmr_daily_power_offpeak_cost:
@@ -756,7 +848,7 @@
       unit_of_measurement: €
       value_template: "{{ states('sensor.dsmr_daily_power_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}"
     dsmr_daily_gas_cost:
-      friendly_name: Daily Power Peak Cost
+      friendly_name: Daily Gas Cost
       unit_of_measurement: €
       value_template: "{{ states('sensor.dsmr_daily_gas')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float }}"
     dsmr_weekly_power_offpeak_cost:
@@ -768,7 +860,7 @@
       unit_of_measurement: €
       value_template: "{{ states('sensor.dsmr_weekly_power_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}"
     dsmr_weekly_gas_cost:
-      friendly_name: Weekly Power Peak Cost
+      friendly_name: Weekly Gas Cost
       unit_of_measurement: €
       value_template: "{{ states('sensor.dsmr_weekly_gas')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float }}"
     dsmr_monthly_power_offpeak_cost:
@@ -780,24 +872,24 @@
       unit_of_measurement: €
       value_template: "{{ states('sensor.dsmr_monthly_power_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}"
     dsmr_monthly_gas_cost:
-      friendly_name: Monthly Power Peak Cost
+      friendly_name: Monthly Gas Cost
       unit_of_measurement: €
       value_template: "{{ states('sensor.dsmr_monthly_gas')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float }}"
     dsmr_hourly_power_cost:
-      friendly_name: Hourly Power
-      unit_of_measurement: kWh
+      friendly_name: Hourly Power Cost
+      unit_of_measurement: €
       value_template: "{{ states('sensor.dsmr_hourly_power_offpeak_cost')|float + states('sensor.dsmr_hourly_power_peak_cost')|float }}"
     dsmr_daily_power_cost:
-      friendly_name: Daily Power
-      unit_of_measurement: kWh
-      value_template: "{{ states('sensor.dsmr_daily_power_offpeak_cosy')|float + states('sensor.dsmr_daily_power_peak_cost')|float }}"
+      friendly_name: Daily Power Cost
+      unit_of_measurement: €
+      value_template: "{{ states('sensor.dsmr_daily_power_offpeak_cost')|float + states('sensor.dsmr_daily_power_peak_cost')|float }}"
     dsmr_weekly_power_cost:
-      friendly_name: Weekly Power
-      unit_of_measurement: kWh
+      friendly_name: Weekly Power Cost
+      unit_of_measurement: €
       value_template: "{{ states('sensor.dsmr_weekly_power_offpeak_cost')|float + states('sensor.dsmr_weekly_power_peak_cost')|float }}"
     dsmr_monthly_power_cost:
-      friendly_name: Monthly Power
-      unit_of_measurement: kWh
+      friendly_name: Monthly Power Cost
+      unit_of_measurement: €
       value_template: "{{ states('sensor.dsmr_monthly_power_offpeak_cost')|float + states('sensor.dsmr_monthly_power_peak_cost')|float }}"
     dsmr_current_electricity_cost:
       friendly_name: Current Electricity Cost
@@ -819,15 +911,25 @@
       value_template: >-
         {{ (states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12) * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float }}
 - platform: statistics
-  entity_id: sensor.0x00158d0002320730_humidity
+  entity_id: sensor.xiaomi_humiditysensor_bathroom
   name: bathroom_hum_mean_30
   max_age:
     minutes: 30
 - platform: statistics
-  entity_id: sensor.0x00158d0002320730_humidity
-  name: bathroom_hum_mean_7 
+  entity_id: sensor.xiaomi_humiditysensor_bathroom
+  name: bathroom_hum_mean_7
   max_age:
     minutes: 7
+- platform: statistics
+  entity_id: sensor.dsmr_consumption_gas_currently_delivered
+  name: gas_mean
+  max_age:
+    minutes: 30
+- platform: statistics
+  entity_id: sensor.dsmr_consumption_gas_currently_delivered
+  name: gas_mean_short
+  max_age:
+    minutes: 10
 - platform: mqtt
   name: vacuum_last_run
   state_topic: "vacuum/last_run"

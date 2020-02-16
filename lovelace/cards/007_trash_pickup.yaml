@@ -22,7 +22,7 @@ cards:
       entity: input_boolean.restafval
       state:
       - value: 'on'
-        color: var(--icon-color-red)
+        color: var(--icon-color-deep-purple)
         icon: mdi:trash-can
       - value: 'off'
         color: var(--element-accent-color)
