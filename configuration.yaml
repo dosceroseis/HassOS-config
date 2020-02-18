@@ -116,6 +116,7 @@ tplink:
   - host: !secret tplink_host_ip_2
   - host: !secret tplink_host_ip_3
   - host: !secret tplink_host_ip_4
+  - host: !secret tplink_host_ip_5
 
 #vacuum:
 #  - platform: xiaomi_miio

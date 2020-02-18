@@ -95,7 +95,3 @@ motion_bathroom_toggle:
   name: motion_bathroom_toggle
 motion_garage:
   name: motion_garage
-motion_controlled_garage:
-  name: motion_controlled_garage
-motion_garage_toggle:
-  name: motion_garage_toggle

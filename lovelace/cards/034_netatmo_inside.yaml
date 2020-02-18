@@ -6,8 +6,8 @@ style:
 cards:
 - type: horizontal-stack
   cards:
-   - type: picture
-     image: /local/divider.png
+  - type: picture
+    image: /local/divider.png
 - type: horizontal-stack
   cards:
   - type: 'custom:flex-horseshoe-card'
@@ -95,8 +95,8 @@ cards:
       min: 10
       max: 35
     color_stops:
-      0: 'var(--icon-color-blue)'
-      18: 'var(--icon-color-blue-grey)'
+      0: 'var(--icon-color-blue-grey)'
+      18: 'var(--icon-color-blue)'
       20: 'var(--icon-color-green)'
       22: 'var(--icon-color-red)'
     style: |

@@ -112,6 +112,30 @@ brontosaurus_power_monthly:
   tariffs:
     - peak
     - offpeak
+humidifier_power_hourly:
+  source: sensor.tp_link_humidifier_total_kwh
+  cycle: hourly
+  tariffs:
+    - peak
+    - offpeak
+humidifier_power_daily:
+  source: sensor.tp_link_humidifier_total_kwh
+  cycle: daily
+  tariffs:
+    - peak
+    - offpeak
+humidifier_power_weekly:
+  source: sensor.tp_link_humidifier_total_kwh
+  cycle: weekly
+  tariffs:
+    - peak
+    - offpeak
+humidifier_power_monthly:
+  source: sensor.tp_link_humidifier_total_kwh
+  cycle: monthly
+  tariffs:
+    - peak
+    - offpeak
 dsmr_hourly_power_offpeak:
   source: sensor.dsmr_reading_electricity_delivered_1
   cycle: hourly
