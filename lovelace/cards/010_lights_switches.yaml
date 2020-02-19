@@ -126,7 +126,7 @@ cards:
       color_off: var(--icon-off-color)
       color_type: icon
       icon: mdi:lightbulb
-      entity: light.hue_bathroom
+      entity: light.bathroom
       action: more_info
       style:
       - font-size: 10px
@@ -147,7 +147,7 @@ cards:
       full_row: true
       hide_state: true
     - type: custom:slider-entity-row
-      entity: light.hue_bathroom
+      entity: light.bathroom
       full_row: true
       hide_state: true
   - type: horizontal-stack
