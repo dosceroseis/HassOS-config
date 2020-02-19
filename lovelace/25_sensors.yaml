@@ -3,7 +3,7 @@ id: sensors
 theme: dark-mode
 icon: mdi:thermometer-lines
 cards:
- - !include /config/lovelace/cards/018_temps_humidity.yaml
- - !include /config/lovelace/cards/028_temps_humidity_per_room.yaml
- - !include /config/lovelace/cards/030_temps_humidity_cabinet.yaml
- - !include /config/lovelace/cards/035_power_consumption_individual_v2.yaml
+ - !include lovelace/cards/018_temps_humidity.yaml
+ - !include lovelace/cards/028_temps_humidity_per_room.yaml
+ - !include lovelace/cards/030_temps_humidity_cabinet.yaml
+ - !include lovelace/cards/035_power_consumption_individual_v2.yaml

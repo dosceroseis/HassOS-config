@@ -193,7 +193,3 @@ cards:
           color: var((--icon-color-red)
         - value: 'created'
           color: var(--icon-color-yellow)
-  - type: horizontal-stack
-    cards:
-    - type: picture
-      image: /local/divider.png

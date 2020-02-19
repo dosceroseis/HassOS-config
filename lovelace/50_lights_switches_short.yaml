@@ -2,5 +2,5 @@ title: Lights
 id: lights
 icon: mdi:lightbulb
 cards:
- - !include /config/lovelace/cards/010_lights_switches.yaml
- - !include /config/lovelace/cards/012_aquarium.yaml
+ - !include lovelace/cards/010_lights_switches.yaml
+ - !include lovelace/cards/012_aquarium.yaml

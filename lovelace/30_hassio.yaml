@@ -3,6 +3,6 @@ id: hassio
 theme: dark-mode
 icon: mdi:home-assistant
 cards:
-  - !include /config/lovelace/cards/025_adguard.yaml
-  - !include /config/lovelace/cards/029_hass_control.yaml
+  - !include lovelace/cards/025_adguard.yaml
+  - !include lovelace/cards/029_hass_control.yaml
 

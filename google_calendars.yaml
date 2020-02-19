@@ -16,22 +16,18 @@
     ignore_availability: true
     name: Feestdagen in Nederland
     track: true
-
 - cal_id: 6g7qd5mn2am7ll54i771evjef4@group.calendar.google.com
   entities:
   - device_id: gezamenlijke_afspraken
     ignore_availability: true
     name: Gezamenlijke Afspraken
     track: true
-
-
 - cal_id: dvs9v52fec8hrn7dq1fv2f6cr4o32fv3@import.calendar.google.com
   entities:
   - device_id: f1_calendar_2019_race
     ignore_availability: true
     name: F1 Calendar 2019
     track: true
-
 - cal_id: 9bn071r4lk1sv35hg534i8opfabapj87@import.calendar.google.com
   entities:
   - device_id: gft-afval 

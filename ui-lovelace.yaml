@@ -62,8 +62,6 @@ resources:
     type: module
   - url: /community_plugin/custom-header/custom-header.js
     type: module
-  - url: /local/thermostat-card.js?v=3
-    type: module
   - url: /community_plugin/flex-horseshoe-card/flex-horseshoe-card.js?v=1
     type: module
   - url: /community_plugin/lovelace-layout-card/layout-card.js
@@ -75,9 +73,9 @@ resources:
 
 title: Jurassic
 views:
-  - !include /config/lovelace/00_overview.yaml
-  - !include /config/lovelace/20_lights_switches.yaml
-  - !include /config/lovelace/25_sensors.yaml
-  - !include /config/lovelace/30_hassio.yaml
-  - !include /config/lovelace/40_overview_short.yaml
-  - !include /config/lovelace/50_lights_switches_short.yaml
+  - !include lovelace/00_overview.yaml
+  - !include lovelace/20_lights_switches.yaml
+  - !include lovelace/25_sensors.yaml
+  - !include lovelace/30_hassio.yaml
+  - !include lovelace/40_overview_short.yaml
+  - !include lovelace/50_lights_switches_short.yaml

@@ -2,19 +2,16 @@ title: Overview
 id: overview
 icon: mdi:view-dashboard-variant
 cards:
-  - !include /config/lovelace/cards/001_presence_alarm.yaml
-  - !include /config/lovelace/cards/002_machine_control.yaml
-  - !include /config/lovelace/cards/005_media_center.yaml
-  - !include /config/lovelace/cards/031_thermostat_evohome.yaml
-  - !include /config/lovelace/cards/032_power_consumption_v2.yaml
-  - !include /config/lovelace/cards/034_netatmo_inside.yaml
-# - !include /config/lovelace/cards/022_vacuum.yaml
-  - !include /config/lovelace/cards/011_weather.yaml
-# - !include /config/lovelace/cards/009_light_control_rooms.yaml
-  - !include /config/lovelace/cards/027_f1_times_v2.yaml
-  - !include /config/lovelace/cards/007_trash_pickup.yaml
-  - !include /config/lovelace/cards/006_laundry.yaml
-  - !include /config/lovelace/cards/008_sensors.yaml
-
-
-
+  - !include lovelace/cards/001_presence_alarm.yaml
+  - !include lovelace/cards/002_machine_control.yaml
+  - !include lovelace/cards/005_media_center.yaml
+  - !include lovelace/cards/031_thermostat_evohome.yaml
+  - !include lovelace/cards/032_power_consumption_v2.yaml
+  - !include lovelace/cards/034_netatmo_inside.yaml
+# - !include lovelace/cards/022_vacuum.yaml
+  - !include lovelace/cards/011_weather.yaml
+# - !include lovelace/cards/009_light_control_rooms.yaml
+  - !include lovelace/cards/027_f1_times_v2.yaml
+  - !include lovelace/cards/007_trash_pickup.yaml
+  - !include lovelace/cards/006_laundry.yaml
+  - !include lovelace/cards/008_sensors.yaml

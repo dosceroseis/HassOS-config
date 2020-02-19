@@ -2,6 +2,6 @@ title: Machines
 id: machines
 icon: mdi:desktop-tower
 cards:
- - !include /config/lovelace/cards/002_machine_control.yaml
- - !include /config/lovelace/cards/003_brontosaurus.yaml
- - !include /config/lovelace/cards/004_drives.yaml
+ - !include lovelace/cards/002_machine_control.yaml
+ - !include lovelace/cards/003_brontosaurus.yaml
+ - !include lovelace/cards/004_drives.yaml
