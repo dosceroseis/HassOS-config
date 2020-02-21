@@ -29,7 +29,7 @@ cards:
         unit: '€'
         area: "Electricity"
     show:
-      horseshoe_style: 'autominmax'
+      horseshoe_style: 'lineargradient'
     layout:
       hlines:
       - id: 0
