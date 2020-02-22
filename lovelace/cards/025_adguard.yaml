@@ -6,8 +6,8 @@ style:
 cards:
 - type: horizontal-stack
   cards:
-   - type: picture
-     image: /local/divider.png
+  - type: picture
+    image: /local/divider.png
 - type: horizontal-stack
   cards:
     - type: custom:mini-graph-card
@@ -34,8 +34,8 @@ cards:
       - var(--icon-color-green)
 - type: horizontal-stack
   cards:
-   - type: picture
-     image: /local/divider.png
+  - type: picture
+    image: /local/divider.png
 - type: horizontal-stack
   cards:
     - type: custom:mini-graph-card
@@ -62,8 +62,8 @@ cards:
       - var(--icon-color-yellow)
 - type: horizontal-stack
   cards:
-   - type: picture
-     image: /local/divider.png
+  - type: picture
+    image: /local/divider.png
 - type: horizontal-stack
   cards:
   - type: custom:bar-card
@@ -121,9 +121,10 @@ cards:
     - value: 'off'
       color: var(--icon-color-red)
       icon: mdi:shield-alert
-    style:
-    - font-size: 10px
-    - text-transform: capitalize
+    styles:
+      card:
+      - font-size: 10px
+      - text-transform: capitalize
   - type: "custom:button-card"
     icon: mdi:shield-alert
     name: Safe Browsing
@@ -139,9 +140,10 @@ cards:
     - value: 'off'
       color: var(--element-accent-color)
       icon: mdi:shield-link-variant
-    style:
-    - font-size: 10px
-    - text-transform: capitalize
+    styles:
+      card:
+      - font-size: 10px
+      - text-transform: capitalize
   - type: "custom:button-card"
     icon: mdi:shield-alert
     name: Safe Search
@@ -157,9 +159,10 @@ cards:
     - value: 'off'
       color: var(--element-accent-color)
       icon: mdi:shield-search
-    style:
-    - font-size: 10px
-    - text-transform: capitalize
+    styles:
+      card:
+      - font-size: 10px
+      - text-transform: capitalize
   - type: "custom:button-card"
     icon: mdi:shield-alert
     name: Parental Control
@@ -175,10 +178,11 @@ cards:
     - value: 'off'
       color: var(--element-accent-color)
       icon: mdi:shield-key
-    style:
-    - font-size: 10px
-    - text-transform: capitalize
+    styles:
+      card:
+      - font-size: 10px
+      - text-transform: capitalize
 - type: horizontal-stack
   cards:
-   - type: picture
-     image: /local/divider.png
+  - type: picture
+    image: /local/divider.png

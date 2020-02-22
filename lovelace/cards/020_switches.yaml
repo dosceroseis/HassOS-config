@@ -8,76 +8,81 @@ cards:
   cards:
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png
   - type: horizontal-stack
     cards:
-     - type: "custom:button-card"
-       name: Washer
-       color: var(--icon-color-amber)
-       color_off: var(--icon-off-color)
-       color_type: icon
-       icon: mdi:power-socket-eu
-       entity: switch.tp_link_washingmachine
-       tap_action: 
+    - type: "custom:button-card"
+      name: Washer
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      color_type: icon
+      icon: mdi:power-socket-eu
+      entity: switch.tp_link_washingmachine
+      tap_action: 
         action: more-info
-       style:
-         - font-size: 10px
-         - text-transform: capitalize
-         - background-color: var(--element-accent-color)
-     - type: "custom:button-card"
-       name: Dryer
-       color: var(--icon-color-amber)
-       color_off: var(--icon-off-color)
-       color_type: icon
-       icon: mdi:power-socket-eu
-       entity: switch.tp_link_dryer
-       tap_action: 
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
+    - type: "custom:button-card"
+      name: Dryer
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      color_type: icon
+      icon: mdi:power-socket-eu
+      entity: switch.tp_link_dryer
+      tap_action: 
         action: more-info
-       style:
-         - font-size: 10px
-         - text-transform: capitalize
-         - background-color: var(--element-accent-color)
-     - type: "custom:button-card"
-       name: Bronto
-       color: var(--icon-color-amber)
-       color_off: var(--icon-off-color)
-       color_type: icon
-       icon: mdi:power-socket-eu
-       entity: switch.tp_link_brontosaurus
-       tap_action: 
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
+    - type: "custom:button-card"
+      name: Bronto
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      color_type: icon
+      icon: mdi:power-socket-eu
+      entity: switch.tp_link_brontosaurus
+      tap_action: 
         action: more-info
-       style:
-         - font-size: 10px
-         - text-transform: capitalize
-         - background-color: var(--element-accent-color)
-     - type: "custom:button-card"
-       name: Coffee
-       color: var(--icon-color-amber)
-       color_off: var(--icon-off-color)
-       color_type: icon
-       icon: mdi:power-socket-eu
-       entity: switch.tp_link_coffeemachine
-       tap_action: 
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
+    - type: "custom:button-card"
+      name: Coffee
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      color_type: icon
+      icon: mdi:power-socket-eu
+      entity: switch.tp_link_coffeemachine
+      tap_action: 
         action: more-info
-       style:
-         - font-size: 10px
-         - text-transform: capitalize
-         - background-color: var(--element-accent-color)
-     - type: "custom:button-card"
-       name: Mediacenter
-       color: var(--icon-color-amber)
-       color_off: var(--icon-off-color)
-       color_type: icon
-       icon: mdi:power-socket-eu
-       entity: switch.tp_link_mediacenter
-       tap_action: 
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
+    - type: "custom:button-card"
+      name: Mediacenter
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      color_type: icon
+      icon: mdi:power-socket-eu
+      entity: switch.tp_link_mediacenter
+      tap_action: 
         action: more-info
-       style:
-         - font-size: 10px
-         - text-transform: capitalize
-         - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png

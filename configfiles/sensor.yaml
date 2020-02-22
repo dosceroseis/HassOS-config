@@ -990,6 +990,11 @@
       unit_of_measurement: €/h
       value_template: >-
         {{ (states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12) * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float }}
+    dsmr_current_gas_per_hour:
+      friendly_name: Current Gas Cost
+      unit_of_measurement: m3h
+      value_template: >-
+        {{ states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12 }}
 - platform: statistics
   entity_id: sensor.xiaomi_humiditysensor_bathroom
   name: bathroom_hum_mean_30

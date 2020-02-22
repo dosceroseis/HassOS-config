@@ -6,8 +6,8 @@ style:
 cards:
 - type: horizontal-stack
   cards:
-   - type: picture
-     image: /local/divider.png 
+  - type: picture
+    image: /local/divider.png 
 - type: horizontal-stack
   cards:
   - type: 'custom:flex-horseshoe-card'
@@ -19,14 +19,6 @@ cards:
       - entity: sensor.dsmr_current_electricity_cost
         decimals: 2
         unit: '€ per hour'
-        area: "Electricity"
-      - entity: sensor.dsmr_day_consumption_electricity_merged
-        decimals: 2
-        unit: 'kWh'
-        area: "Electricity"
-      - entity: sensor.dsmr_day_consumption_electricity_cost_merged
-        decimals: 2
-        unit: '€'
         area: "Electricity"
     show:
       horseshoe_style: 'lineargradient'
@@ -69,11 +61,13 @@ cards:
     color_stops:
       1: '#FFF6E3'
       3600: 'var(--icon-color-amber)' 
+    style:
+      --ha-card-box-shadow: none
   - type: 'custom:flex-horseshoe-card'
     entities:
-      - entity: sensor.dsmr_consumption_gas_currently_delivered
-        decimals: 3
-        unit: 'm3'
+      - entity: sensor.dsmr_current_gas_per_hour
+        decimals: 2
+        unit: 'm³h'
         area: Gas
       - entity: sensor.dsmr_current_gas_cost
         decimals: 2
@@ -116,14 +110,14 @@ cards:
             - font-size: 1.2em;
     horseshoe_scale:
       min: 0
-      max: 0.25
+      max: 2
     color_stops:
       0.0001: '#FFF6E3'
       0.25: 'var(--icon-color-green)'
 - type: horizontal-stack
   cards:
-   - type: picture
-     image: /local/divider.png
+  - type: picture
+    image: /local/divider.png
 - type: horizontal-stack
   cards:
     - type: custom:mini-graph-card
@@ -198,5 +192,5 @@ cards:
       hour24: true
 - type: horizontal-stack
   cards:
-   - type: picture
-     image: /local/divider.png
+  - type: picture
+    image: /local/divider.png

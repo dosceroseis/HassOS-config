@@ -8,8 +8,8 @@ cards:
   cards:
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png
   - type: horizontal-stack
     cards:
     - type: "custom:button-card"
@@ -27,6 +27,11 @@ cards:
       - value: 'off'
         color: var(--element-accent-color)
         icon: mdi:trash-can-outline 
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
     - type: "custom:button-card"
       show_name: false
       show_label: false
@@ -44,6 +49,11 @@ cards:
       - value: 'off'
         color: var(--element-accent-color)
         icon: mdi:recycle
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
     - type: "custom:button-card"
       show_name: false
       show_label: false
@@ -59,25 +69,30 @@ cards:
       - value: 'off'
         color: var(--element-accent-color)
         icon: mdi:file-document-box-multiple-outline
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png
   - type: horizontal-stack
     cards:
-     - type: "custom:bignumber-card"
-       entity: sensor.afval_rest_days_left
-       title: Thursday
-       scale: 15px
-     - type: "custom:bignumber-card"
-       entity: sensor.afval_gft_days_left
-       title: Thursday
-       scale: 15px
-     - type: "custom:bignumber-card"
-       entity: sensor.afval_papier_days_left
-       title: Saturday
-       scale: 15px
+    - type: "custom:bignumber-card"
+      entity: sensor.afval_rest_days_left
+      title: Thursday
+      scale: 15px
+    - type: "custom:bignumber-card"
+      entity: sensor.afval_gft_days_left
+      title: Thursday
+      scale: 15px
+    - type: "custom:bignumber-card"
+      entity: sensor.afval_papier_days_left
+      title: Saturday
+      scale: 15px
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png

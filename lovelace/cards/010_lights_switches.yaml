@@ -20,10 +20,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.entree_2
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
     - type: "custom:button-card"
       name: Hallway
       color: auto
@@ -32,10 +33,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.hallway
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
     - type: "custom:button-card"
       name: Diningarea
       color: auto
@@ -44,10 +46,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.diningarea
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
     - type: "custom:button-card"
       name: Divide
       color: auto
@@ -56,10 +59,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.divide
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
   - type: horizontal-stack
     cards:
     - type: custom:slider-entity-row
@@ -92,10 +96,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.livingroom
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
     - type: "custom:button-card"
       name: Kitchen
       color: var(--icon-color-amber)
@@ -104,10 +109,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.kitchen
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
     - type: "custom:button-card"
       name: Washroom
       color: auto
@@ -116,10 +122,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.washroom
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
     - type: "custom:button-card"
       name: Bathroom
       color: var(--icon-color-amber)
@@ -128,10 +135,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.bathroom
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
   - type: horizontal-stack
     cards:
     - type: custom:slider-entity-row
@@ -164,10 +172,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.master_bedroom
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
     - type: "custom:button-card"
       name: Small Bedroom
       color: auto
@@ -176,10 +185,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.small_bedroom
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
     - type: "custom:button-card"
       name: Attic
       color: auto
@@ -188,10 +198,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.attic
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
     - type: "custom:button-card"
       name: Guestroom
       color: auto
@@ -200,10 +211,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.guestroom
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
     - type: "custom:button-card"
       name: Outside
       color: auto
@@ -212,10 +224,11 @@ cards:
       icon: mdi:lightbulb
       entity: light.outside
       action: more_info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
   - type: horizontal-stack
     cards:
     - type: custom:slider-entity-row

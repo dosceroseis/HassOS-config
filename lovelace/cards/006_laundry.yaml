@@ -8,49 +8,55 @@ cards:
   cards:
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png
   - type: horizontal-stack
     cards:
-     - type: "custom:button-card"
-       icon: mdi:washing-machine
-       show_name: false
-       show_label: false
-       tap_action: 
+    - type: "custom:button-card"
+      icon: mdi:washing-machine
+      show_name: false
+      show_label: false
+      tap_action: 
         action: more-info
-       color: var(--icon-color-green)
-       color_off: var(--element-accent-color)
-       color_type: card
-       entity: input_boolean.washingmachine
-       style:
-        - color: var(--icon-off-color)
-     - type: "custom:button-card"
-       icon: mdi:tumble-dryer
-       show_name: false
-       show_label: false
-       tap_action: 
+      color: var(--icon-color-green)
+      color_off: var(--element-accent-color)
+      color_type: card
+      entity: input_boolean.washingmachine
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+    - type: "custom:button-card"
+      icon: mdi:tumble-dryer
+      show_name: false
+      show_label: false
+      tap_action: 
         action: more-info
-       color: var(--icon-color-green)
-       color_off: var(--element-accent-color)
-       color_type: card
-       entity: input_boolean.dryer
-       style:
-        - color: var(--icon-off-color)
+      color: var(--icon-color-green)
+      color_off: var(--element-accent-color)
+      color_type: card
+      entity: input_boolean.dryer
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png
   - type: horizontal-stack
     cards:
-     - type: "custom:bignumber-card"
-       entity: sensor.washing_ontime
-       title: Time elapsed
-       scale: 15px
-     - type: "custom:bignumber-card"
-       entity: sensor.dryer_ontime
-       title: Time elapsed
-       scale: 15px
+    - type: "custom:bignumber-card"
+      entity: sensor.washing_ontime
+      title: Time elapsed
+      scale: 15px
+    - type: "custom:bignumber-card"
+      entity: sensor.dryer_ontime
+      title: Time elapsed
+      scale: 15px
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png
