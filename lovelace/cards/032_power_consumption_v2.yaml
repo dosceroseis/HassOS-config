@@ -16,10 +16,14 @@ cards:
         decimals: 0
         unit: 'W'
         area: "Electricity"
+        tap_action:
+          action: more-info
       - entity: sensor.dsmr_current_electricity_cost
         decimals: 2
         unit: '€ per hour'
         area: "Electricity"
+        tap_action:
+          action: more-info
     show:
       horseshoe_style: 'lineargradient'
     layout:
@@ -69,10 +73,14 @@ cards:
         decimals: 2
         unit: 'm³h'
         area: Gas
+        tap_action:
+          action: more-info
       - entity: sensor.dsmr_current_gas_cost
         decimals: 2
         unit: '€ per hour'
         area: Gas
+        tap_action:
+          action: more-info
     show:
       horseshoe_style: 'lineargradient'
     layout:

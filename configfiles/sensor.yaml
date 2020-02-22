@@ -537,8 +537,27 @@
       arg: /home
     - type: memory_free
     - type: memory_use
+- platform: statistics
+  entity_id: sensor.xiaomi_humiditysensor_bathroom
+  name: bathroom_hum_mean_30
+  max_age:
+    minutes: 30
+- platform: statistics
+  entity_id: sensor.xiaomi_humiditysensor_bathroom
+  name: bathroom_hum_mean_7
+  max_age:
+    minutes: 7
+- platform: statistics
+  entity_id: sensor.dsmr_consumption_gas_currently_delivered
+  name: gas_mean
+  max_age:
+    minutes: 30
 - platform: template
   sensors:
+    solar_angle:
+      friendly_name: "Gas Max 30"
+      unit_of_measurement: '°'
+      value_template: "{{ state_attr('sensor.gas_mean', 'max') }}"
     solar_angle:
       friendly_name: "Sun Angle"
       unit_of_measurement: '°'
@@ -995,26 +1014,6 @@
       unit_of_measurement: m3h
       value_template: >-
         {{ states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12 }}
-- platform: statistics
-  entity_id: sensor.xiaomi_humiditysensor_bathroom
-  name: bathroom_hum_mean_30
-  max_age:
-    minutes: 30
-- platform: statistics
-  entity_id: sensor.xiaomi_humiditysensor_bathroom
-  name: bathroom_hum_mean_7
-  max_age:
-    minutes: 7
-- platform: statistics
-  entity_id: sensor.dsmr_consumption_gas_currently_delivered
-  name: gas_mean
-  max_age:
-    minutes: 30
-- platform: statistics
-  entity_id: sensor.dsmr_consumption_gas_currently_delivered
-  name: gas_mean_short
-  max_age:
-    minutes: 10
 - platform: mqtt
   name: vacuum_last_run
   state_topic: "vacuum/last_run"

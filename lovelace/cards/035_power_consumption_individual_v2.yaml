@@ -16,10 +16,14 @@ cards:
         decimals: 0
         unit: 'W'
         area: "Brontosaurus"
+        tap_action:
+          action: more-info
       - entity: sensor.tp_link_brontosaurus_current_cost
         decimals: 2
         unit: '€ per hour'
         area: "Brontosaurus"
+        tap_action:
+          action: more-info
     show:
       horseshoe_style: 'lineargradient'
     layout:
@@ -67,10 +71,14 @@ cards:
         decimals: 0
         unit: 'W'
         area: "Mediacenter"
+        tap_action:
+          action: more-info
       - entity: sensor.tp_link_mediacenter_current_cost
         decimals: 2
         unit: '€ per hour'
         area: "Mediacenter"
+        tap_action:
+          action: more-info
     show:
       horseshoe_style: 'lineargradient'
     layout:
@@ -118,10 +126,14 @@ cards:
         decimals: 0
         unit: 'W'
         area: "Washer"
+        tap_action:
+          action: more-info
       - entity: sensor.tp_link_washer_current_cost
         decimals: 2
         unit: '€ per hour'
         area: "Washer"
+        tap_action:
+          action: more-info
     show:
       horseshoe_style: 'lineargradient'
     layout:
