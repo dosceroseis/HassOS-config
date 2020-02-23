@@ -26,7 +26,7 @@ custom_header:
       hide_tabs: 4,5
 
 resources:
-  - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
+  - url: /local/mini-graph-card/dist/mini-graph-card-bundle.js
     type: module
   - url: /community_plugin/button-card/button-card.js
     type: module
@@ -46,7 +46,7 @@ resources:
     type: js
   - url: /community_plugin/bar-card/bar-card.js
     type: js
-  - url: /community_plugin/bignumber-card/bignumber-card.js
+  - url: /local/bignumber-card.js
     type: js
   - url: /local/simple-thermostat.js?v=15
     type: module
@@ -60,15 +60,12 @@ resources:
     type: module
   - url: /community_plugin/custom-header/custom-header.js
     type: module
-  - url: /community_plugin/flex-horseshoe-card/flex-horseshoe-card.js?v=1
-    type: module
+  - url: /community_plugin/dual-gauge-card/dual-gauge-card.js
+    type: js
   - url: /community_plugin/lovelace-layout-card/layout-card.js
-    type: module
-  - url: /local/mini-graph-card-stripped.js?v=5
     type: module
   - url: /community_plugin/lovelace-card-mod/card-mod.js
     type: module
-
 title: Jurassic
 views:
   - !include lovelace/00_overview.yaml

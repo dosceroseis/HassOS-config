@@ -19,10 +19,6 @@ cards:
       scale: 15px
   - type: horizontal-stack
     cards:
-    - type: picture
-      image: /local/divider.png
-  - type: horizontal-stack
-    cards:
     - type: "custom:button-card"
       icon: mdi:timer
       show_name: false
@@ -46,10 +42,6 @@ cards:
     - type: "custom:singlevalue-card"
       entity: sensor.f1_quali_time
       scale: 15px
-  - type: horizontal-stack
-    cards:
-    - type: picture
-      image: /local/divider.png
   - type: horizontal-stack
     cards:
     - type: "custom:button-card"
@@ -77,7 +69,7 @@ cards:
     - type: "custom:singlevalue-card"
       entity: sensor.f1_race_time
       scale: 15px
-  - type: horizontal-stack
-    cards:
-     - type: picture
-       image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

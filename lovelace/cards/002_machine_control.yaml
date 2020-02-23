@@ -147,10 +147,6 @@ cards:
         - box-shadow: 0px 0px 0px 0px
   - type: horizontal-stack
     cards:
-    - type: picture
-      image: /local/divider.png
-  - type: horizontal-stack
-    cards:
     - type: "custom:button-card"
       name: NZBget
       color_type: icon
@@ -412,7 +408,7 @@ cards:
       title: Freespace
       scale: 15px
       entity: sensor.drivepool_free
-  - type: horizontal-stack
-    cards:
-     - type: picture
-       image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

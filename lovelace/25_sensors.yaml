@@ -6,4 +6,4 @@ cards:
   - !include cards/018_temps_humidity.yaml
   - !include cards/028_temps_humidity_per_room.yaml
   - !include cards/030_temps_humidity_cabinet.yaml
-  - !include cards/035_power_consumption_individual_v2.yaml
+#  - !include cards/035_power_consumption_individual_v2.yaml

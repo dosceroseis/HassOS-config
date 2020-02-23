@@ -84,10 +84,6 @@ cards:
       hide_state: true
   - type: horizontal-stack
     cards:
-    - type: picture
-      image: /local/divider.png
-  - type: horizontal-stack
-    cards:
     - type: "custom:button-card"
       name: Livingroom
       color: auto
@@ -158,10 +154,6 @@ cards:
       entity: light.bathroom
       full_row: true
       hide_state: true
-  - type: horizontal-stack
-    cards:
-    - type: picture
-      image: /local/divider.png
   - type: horizontal-stack
     cards:
     - type: "custom:button-card"
@@ -251,7 +243,7 @@ cards:
       entity: light.outside
       full_row: true
       hide_state: true
-  - type: horizontal-stack
-    cards:
-    - type: picture
-      image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

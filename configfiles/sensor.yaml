@@ -995,25 +995,25 @@
       unit_of_measurement: €/h
       value_template: >-
         {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
-          {{ states('sensor.dsmr_reading_electricity_currently_delivered')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+          {{ (states('sensor.dsmr_reading_electricity_currently_delivered')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float)|round(2) }}
         {% else %}
-          {{ states('sensor.dsmr_reading_electricity_currently_delivered')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+          {{ (states('sensor.dsmr_reading_electricity_currently_delivered')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float)|round(2) }}
         {% endif %}
     dsmr_current_electricity_watts:
       friendly_name: Current Electricity Watt
       unit_of_measurement: Watt
       value_template: >-
-        {{ states('sensor.dsmr_reading_electricity_currently_delivered')|float * 1000 }}
+        {{ (states('sensor.dsmr_reading_electricity_currently_delivered')|float * 1000)|round(0) }}
     dsmr_current_gas_cost:
       friendly_name: Current Gas Cost
       unit_of_measurement: €/h
       value_template: >-
-        {{ (states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12) * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float }}
+        {{ ((states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12) * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float)|round(2) }}
     dsmr_current_gas_per_hour:
       friendly_name: Current Gas Cost
       unit_of_measurement: m3h
       value_template: >-
-        {{ states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12 }}
+        {{ (states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12)|round(3) }}
 - platform: mqtt
   name: vacuum_last_run
   state_topic: "vacuum/last_run"

@@ -76,10 +76,6 @@ cards:
         - box-shadow: 0px 0px 0px 0px
   - type: horizontal-stack
     cards:
-    - type: picture
-      image: /local/divider.png
-  - type: horizontal-stack
-    cards:
     - type: "custom:bignumber-card"
       entity: sensor.afval_rest_days_left
       title: Thursday
@@ -92,7 +88,7 @@ cards:
       entity: sensor.afval_papier_days_left
       title: Saturday
       scale: 15px
-  - type: horizontal-stack
-    cards:
-    - type: picture
-      image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

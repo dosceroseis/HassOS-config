@@ -70,10 +70,6 @@ cards:
         - box-shadow: 0px 0px 0px 0px
   - type: horizontal-stack
     cards:
-    - type: picture
-      image: /local/divider.png
-  - type: horizontal-stack
-    cards:
     - type: "custom:button-card"
       tap_action: 
         action: more-info
@@ -131,10 +127,6 @@ cards:
         - font-size: 12px
         - text-transform: capitalize
         - box-shadow: 0px 0px 0px 0px
-  - type: horizontal-stack
-    cards:
-    - type: picture
-      image: /local/divider.png
   - type: horizontal-stack
     cards:
     - type: "custom:button-card"
@@ -215,7 +207,7 @@ cards:
         - font-size: 12px
         - text-transform: capitalize
         - box-shadow: 0px 0px 0px 0px
-  - type: horizontal-stack
-    cards:
-    - type: picture
-      image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

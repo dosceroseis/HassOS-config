@@ -82,7 +82,7 @@ cards:
         - font-size: 10px
         - text-transform: capitalize
         - background-color: var(--element-accent-color)
-  - type: horizontal-stack
-    cards:
-    - type: picture
-      image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png
