@@ -910,6 +910,55 @@
         {% else %}
           {{ (state_attr('switch.tp_link_humidifier', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
         {% endif %}
+    tp_link_quooker_total_kwh:
+      friendly_name: "Quooker Total Power Used"
+      value_template: "{{ state_attr('switch.tp_link_quooker', 'total_energy_kwh') }}"
+      unit_of_measurement: 'kWh'
+    tp_link_quooker_hourly_power:
+      friendly_name: Quooker Hourly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.quooker_power_hourly_peak')|float + states('sensor.quooker_power_hourly_offpeak')|float }}"
+    tp_link_quooker_hourly_power_cost:
+      friendly_name: Quooker Hourly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.quooker_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_quooker_daily_power:
+      friendly_name: Quooker Daily Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.quooker_power_daily_peak')|float + states('sensor.quooker_power_daily_offpeak')|float }}"
+    tp_link_quooker_daily_power_cost:
+      friendly_name: Quooker Daily Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.quooker_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_quooker_weekly_power:
+      friendly_name: Quooker Weekly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.quooker_power_weekly_peak')|float + states('sensor.quooker_power_weekly_offpeak')|float }}"
+    tp_link_quooker_weekly_power_cost:
+      friendly_name: Quooker Weekly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.quooker_power_weekly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_weekly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_quooker_monthly_power:
+      friendly_name: Quooker Monthly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.quooker_power_monthly_peak')|float + states('sensor.quooker_power_weekly_offpeak')|float }}"
+    tp_link_quooker_monthly_power_cost:
+      friendly_name: Quooker Monthly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.quooker_power_monthly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_monthly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_quooker_current_load:
+      friendly_name: "Quooker Current Load"
+      value_template: "{{ state_attr('switch.tp_link_quooker', 'current_power_w') }}"
+      unit_of_measurement: 'Watts'
+    tp_link_quooker_current_cost:
+      friendly_name: "Quooker Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_quooker', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_quooker', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
     dsmr_hourly_power:
       friendly_name: Hourly Power
       unit_of_measurement: kWh
@@ -1010,7 +1059,7 @@
       value_template: >-
         {{ ((states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12) * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float)|round(2) }}
     dsmr_current_gas_per_hour:
-      friendly_name: Current Gas Cost
+      friendly_name: Current Gas per Hour
       unit_of_measurement: m3h
       value_template: >-
         {{ (states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12)|round(3) }}

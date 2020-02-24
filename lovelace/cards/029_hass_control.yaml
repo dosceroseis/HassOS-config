@@ -12,65 +12,67 @@ cards:
         image: /local/divider.png
     - type: horizontal-stack
       cards:
-        - type: "custom:button-card"
-          name: HomeAssistant
-          icon: mdi:home-assistant
-          show_name: true
-          show_label: false
-          color_type: icon
-          color: var(--icon-color-orange)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.restart_homeassistant
-          tap_action:
-            action: call-service
-            service: script.hassiocontrol_homeassistant_restart
-          style:
+      - type: "custom:button-card"
+        name: HomeAssistant
+        icon: mdi:home-assistant
+        show_name: true
+        show_label: false
+        color_type: icon
+        entity: input_boolean.restart_homeassistant
+        tap_action:
+          action: call-service
+          service: script.hassiocontrol_homeassistant_restart
+        styles:
+          card:
           - font-size: 10px
           - text-transform: capitalize
-        - type: "custom:button-card"
+        state:
+        - value: 'on'
+          color: var(--icon-color-orange)
+          icon: mdi:home-assistant
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:home-assistant
+      - type: "custom:button-card"
+        icon: mdi:nodejs
+        name: NodeRed
+        show_name: true
+        show_label: false
+        color_type: icon
+        entity: input_boolean.restart_nodered
+        tap_action:
+          action: call-service
+          service: script.hassiocontrol_nodered_restart
+        styles:
+          card:
+          - font-size: 10px
+          - text-transform: capitalize
+        state:
+        - value: 'on'
+          color: var(--icon-color-orange)
           icon: mdi:nodejs
-          name: NodeRed
-          show_name: true
-          show_label: false
-          color_type: icon
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:nodejs
+      - type: "custom:button-card"
+        name: Reboot
+        show_name: true
+        show_label: false
+        color_type: icon
+        entity: input_boolean.reboot_host
+        tap_action:
+          action: more-info
+        styles:
+          card:
+          - font-size: 10px
+          - text-transform: capitalize
+        state:
+        - value: 'on'
           color: var(--icon-color-orange)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.restart_nodered
-          tap_action:
-            action: call-service
-            service: script.hassiocontrol_nodered_restart
-          style:
-           - font-size: 10px
-           - text-transform: capitalize
-        - type: "custom:button-card"
-          icon: mdi:router-wireless
-          name: Zigbee2mqtt
-          show_name: true
-          show_label: false
-          color_type: icon
-          color: var(--icon-color-orange)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.restart_zigbee2mqtt
-          tap_action:
-            action: call-service
-            service: script.hassiocontrol_zigbee2mqtt_restart
-          style:
-           - font-size: 10px
-           - text-transform: capitalize
-        - type: "custom:button-card"
           icon: mdi:restart
-          name: Reboot
-          show_name: true
-          show_label: false
-          color_type: icon
-          color: var(--icon-color-orange)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.reboot_host
-          tap_action:
-            action: more-info
-          style:
-           - font-size: 10px
-           - text-transform: capitalize
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:restart
     - type: horizontal-stack
       cards:
       - type: picture

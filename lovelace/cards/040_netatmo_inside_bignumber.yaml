@@ -1,0 +1,61 @@
+type: custom:vertical-style-card
+title: Climate
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: "custom:bignumber-card"
+    entity: sensor.netatmo_home_inside_humidity
+    title: Humidity
+    scale: 15px
+    min: 0
+    max: 1
+    severity:
+      - value: 40
+        style: 'var(--icon-color-red)'
+      - value: 45
+        style: 'var(--icon-color-orange)'
+      - value: 60
+        style: 'var(--icon-color-green)'
+      - value: 100
+        style: 'var(--icon-color-blue)'
+  - type: "custom:bignumber-card"
+    entity: sensor.netatmo_home_inside_temperature
+    title: Temperature
+    scale: 15px
+    min: 0
+    max: 1
+    severity:
+      - value: 18
+        style: 'var(--icon-color-blue)'
+      - value: 20
+        style: 'var(--icon-color-green)'
+      - value: 22
+        style: 'var(--icon-color-green)'
+      - value: 35
+        style: 'var(--icon-color-red)'
+  - type: "custom:bignumber-card"
+    entity: sensor.netatmo_home_inside_co2
+    title: CO₂
+    scale: 15px
+    min: 0
+    max: 1
+    severity:
+      - value: 600
+        style: 'var(--icon-color-green)'
+      - value: 800
+        style: 'var(--icon-color-amber)'
+      - value: 1000
+        style: 'var(--icon-color-orange)'
+      - value: 2000
+        style: 'var(--icon-color-red)'
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

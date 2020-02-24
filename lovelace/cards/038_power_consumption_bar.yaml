@@ -18,14 +18,12 @@ cards:
     min: 0
     max: 3500
     padding: 2px
-    indicator: off
+    indicator: 'off'
     card_style:
     - box-shadow: none
     title_style:
     - text-align: left
     - font-size: 16px
-    bar_style:
-    - align-items: left
     font-size: 8px
     color: var(--icon-color-amber)
   - type: custom:bar-card
@@ -36,7 +34,7 @@ cards:
     min: 0
     max: 2
     padding: 2px
-    indicator: off
+    indicator: 'off'
     card_style:
     - box-shadow: none
     title_style:
@@ -46,6 +44,16 @@ cards:
     - align-items: left
     font-size: 8px
     color: var(--icon-color-green)
+- type: horizontal-stack
+  cards:
+    - type: "custom:bignumber-card"
+      entity: sensor.dsmr_current_electricity_cost
+      title: Current cost
+      scale: 15px
+    - type: "custom:bignumber-card"
+      entity: sensor.dsmr_current_gas_cost
+      title: Current cost
+      scale: 15px
 - type: horizontal-stack
   cards:
     - type: custom:mini-graph-card

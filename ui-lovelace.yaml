@@ -26,7 +26,7 @@ custom_header:
       hide_tabs: 4,5
 
 resources:
-  - url: /local/mini-graph-card/dist/mini-graph-card-bundle.js
+  - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
     type: module
   - url: /community_plugin/button-card/button-card.js
     type: module
@@ -66,6 +66,9 @@ resources:
     type: module
   - url: /community_plugin/lovelace-card-mod/card-mod.js
     type: module
+  - url: /community_plugin/flex-horseshoe-card/flex-horseshoe-card.js
+    type: module
+
 title: Jurassic
 views:
   - !include lovelace/00_overview.yaml

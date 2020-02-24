@@ -7,6 +7,7 @@ cards:
   - !include cards/005_media_center.yaml
   - !include cards/031_thermostat_evohome.yaml
   - !include cards/038_power_consumption_bar.yaml
+  - !include cards/040_netatmo_inside_bignumber.yaml
 # - !include cards/034_netatmo_inside.yaml
 # - !include cards/022_vacuum.yaml
   - !include cards/011_weather.yaml

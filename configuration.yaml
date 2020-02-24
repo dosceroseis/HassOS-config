@@ -117,6 +117,7 @@ tplink:
   - host: !secret tplink_host_ip_3
   - host: !secret tplink_host_ip_4
   - host: !secret tplink_host_ip_5
+  - host: !secret tplink_host_ip_6
 
 #vacuum:
 #  - platform: xiaomi_miio
@@ -141,7 +142,7 @@ emulated_hue:
     - script
 
 group: !include configfiles/groups.yaml
-automation: !include configfiles/automations.yaml
+automation: !include automations.yaml
 script: !include configfiles/scripts.yaml
 switch: !include configfiles/switch.yaml
 camera: !include configfiles/cameras.yaml

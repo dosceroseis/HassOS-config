@@ -1,3 +1,20 @@
+- id: NodeRed_WD
+  alias: NodeRed Watchdog
+  trigger:
+  - platform: state 
+    entity_id: sensor.node_red
+    from: OK
+    to: unknown
+  action:
+  - service: hassio.addon_restart
+    data:
+      addon: core_mosquitto
+  - service: hassio.addon_restart
+    data:
+      addon: 7ad98f9c_zigbee2mqtt
+  - service: hassio.addon_restart
+    data:
+      addon: a0d7b954_nodered
 - id: '1553672084892'
   alias: Nieuwe automatisering
   trigger:
@@ -43,25 +60,303 @@
   - data:
       addon: a0d7b954_nodered
     service: hassio.addon_restart
-- id: '1554963190654'
-  alias: Set theme at startup
+- id: '1582497126970'
+  alias: Turn UP brightness
+  description: ''
   trigger:
-  - event: start
-    platform: homeassistant
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
   condition: []
   action:
-  - data:
-      name: midnight
-    service: frontend.set_theme
-- id: '1558079090706'
-  alias: Set Theme to Midnight
+  - device_id: 62390f5e347049308cddec4ecbb130b3
+    domain: light
+    entity_id: light.hue_livingroom_spot_4
+    type: brightness_increase
+- id: '1582497343266'
+  alias: Turn Up Br
+  description: ''
   trigger:
-  - event: start
-    platform: homeassistant
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
   condition: []
   action:
-  - data:
-      name: midnight
-    service: frontend.set_theme
-
-
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528220879'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528225513'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528226785'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528227285'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528227495'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528229128'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528229754'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528229958'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528230167'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528230355'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528230569'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528230800'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528231152'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528231674'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528232050'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528232315'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528232557'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase
+- id: '1582528239235'
+  alias: Test
+  description: ''
+  trigger:
+  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+    domain: deconz
+    platform: device
+    subtype: turn_on
+    type: remote_button_long_press
+  condition: []
+  action:
+  - device_id: a59e27bd0b3c41ed984d32fde158f3e9
+    domain: light
+    entity_id: light.hue_divide_spot_1
+    type: brightness_increase

@@ -29,7 +29,7 @@ cards:
         color: var(--icon-color-amber)
         icon: mdi:door-open
       - value: 'off'
-        color: var(--element-accent-color)
+        color: var(--icon-off-color)
         icon: mdi:door
     - type: "custom:button-card"
       icon: mdi:door
@@ -48,7 +48,7 @@ cards:
         color: var(--icon-color-amber)
         icon: mdi:door-open
       - value: 'off'
-        color: var(--element-accent-color)
+        color: var(--icon-off-color)
         icon: mdi:door
     - type: "custom:button-card"
       icon: mdi:door
@@ -67,7 +67,7 @@ cards:
         color: var(--icon-color-amber)
         icon: mdi:door-open
       - value: 'off'
-        color: var(--element-accent-color)
+        color: var(--icon-off-color)
         icon: mdi:door
     - type: "custom:button-card"
       icon: mdi:door
@@ -86,17 +86,14 @@ cards:
         color: var(--icon-color-amber)
         icon: mdi:door-open
       - value: 'off'
-        color: var(--element-accent-color)
+        color: var(--icon-off-color)
         icon: mdi:door
   - type: horizontal-stack
     cards:
     - type: "custom:button-card"
-      icon: mdi:walk
       name: Entree
       tap_action: 
         action: more-info
-      color: var(--icon-color-amber)
-      color_off: var(--icon-off-color)
       color_type: icon
       entity: binary_sensor.hue_motion_sensor_entree
       styles:
@@ -104,13 +101,17 @@ cards:
         - font-size: 10px
         - text-transform: capitalize
         - box-shadow: 0px 0px 0px 0px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:walk
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:walk
     - type: "custom:button-card"
-      icon: mdi:walk
       name: Hallway
       tap_action: 
         action: more-info
-      color: var(--icon-color-amber)
-      color_off: var(--icon-off-color)
       color_type: icon
       entity: binary_sensor.tradfri_motion_sensor_hallway
       styles:
@@ -118,13 +119,17 @@ cards:
         - font-size: 10px
         - text-transform: capitalize
         - box-shadow: 0px 0px 0px 0px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:walk
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:walk
     - type: "custom:button-card"
-      icon: mdi:walk
       name: Kitchen
       tap_action: 
         action: more-info
-      color: var(--icon-color-amber)
-      color_off: var(--icon-off-color)
       color_type: icon
       entity: binary_sensor.hue_motion_sensor_kitchen
       styles:
@@ -132,13 +137,17 @@ cards:
         - font-size: 10px
         - text-transform: capitalize
         - box-shadow: 0px 0px 0px 0px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:walk
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:walk
     - type: "custom:button-card"
-      icon: mdi:walk
       name: Washroom
       tap_action: 
         action: more-info
-      color: var(--icon-color-amber)
-      color_off: var(--icon-off-color)
       color_type: icon
       entity: binary_sensor.hue_motion_sensor_washroom
       styles:
@@ -146,15 +155,19 @@ cards:
         - font-size: 10px
         - text-transform: capitalize
         - box-shadow: 0px 0px 0px 0px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:walk
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:walk
   - type: horizontal-stack
     cards:
     - type: "custom:button-card"
-      icon: mdi:walk
       name: Toilet
       tap_action: 
         action: more-info
-      color: var(--icon-color-amber)
-      color_off: var(--icon-off-color)
       color_type: icon
       entity: binary_sensor.hue_motion_sensor_toilet
       styles:
@@ -162,13 +175,17 @@ cards:
         - font-size: 10px
         - text-transform: capitalize
         - box-shadow: 0px 0px 0px 0px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:walk
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:walk
     - type: "custom:button-card"
-      icon: mdi:walk
       name: Bathroom
       tap_action: 
         action: more-info
-      color: var(--icon-color-amber)
-      color_off: var(--icon-off-color)
       color_type: icon
       entity: binary_sensor.tradfri_motionsensor_bathroom
       styles:
@@ -176,13 +193,17 @@ cards:
         - font-size: 10px
         - text-transform: capitalize
         - box-shadow: 0px 0px 0px 0px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:walk
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:walk
     - type: "custom:button-card"
-      icon: mdi:walk
       name: Attic
       tap_action: 
         action: more-info
-      color: var(--icon-color-amber)
-      color_off: var(--icon-off-color)
       color_type: icon
       entity: binary_sensor.tradfri_motionsensor_attic
       styles:
@@ -190,13 +211,17 @@ cards:
         - font-size: 10px
         - text-transform: capitalize
         - box-shadow: 0px 0px 0px 0px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:walk
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:walk
     - type: "custom:button-card"
-      icon: mdi:walk
       name: Garage
       tap_action: 
         action: more-info
-      color: var(--icon-color-amber)
-      color_off: var(--icon-off-color)
       color_type: icon
       entity: input_boolean.motion_garage
       styles:
@@ -204,6 +229,13 @@ cards:
         - font-size: 10px
         - text-transform: capitalize
         - box-shadow: 0px 0px 0px 0px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:walk
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:walk
 - type: horizontal-stack
   cards:
   - type: picture
