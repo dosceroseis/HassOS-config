@@ -6,9 +6,8 @@ cards:
   - !include cards/002_machine_control.yaml
   - !include cards/005_media_center.yaml
   - !include cards/031_thermostat_evohome.yaml
-  - !include cards/038_power_consumption_bar.yaml
-  - !include cards/040_netatmo_inside_bignumber.yaml
-# - !include cards/034_netatmo_inside.yaml
+  - !include cards/032_power_consumption_horseshoe.yaml
+  - !include cards/034_netatmo_inside.yaml
 # - !include cards/022_vacuum.yaml
   - !include cards/011_weather.yaml
 # - !include cards/009_light_control_rooms.yaml

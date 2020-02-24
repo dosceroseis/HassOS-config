@@ -169,7 +169,7 @@ cards:
   - type: horizontal-stack
     cards:
     - type: custom:bar-card
-      title: Washer
+      title: Brontosaurus
       title_position: inside
       unit_of_measurement: "W"
       entity: sensor.tp_link_brontosaurus_current_load

@@ -66,7 +66,7 @@ resources:
     type: module
   - url: /community_plugin/lovelace-card-mod/card-mod.js
     type: module
-  - url: /community_plugin/flex-horseshoe-card/flex-horseshoe-card.js
+  - url: /local/flex-horseshoe-card/flex-horseshoe-card.js?v=0.1
     type: module
 
 title: Jurassic
