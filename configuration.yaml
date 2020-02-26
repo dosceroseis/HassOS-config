@@ -1,11 +1,25 @@
+
 homeassistant:
   name: Home
   latitude: !secret home_latitude
   longitude: !secret home_longitude
   elevation: !secret home_elevation
-  unit_system: !secret unit_system
+  unit_system: metric
   time_zone: !secret time_zone
   customize: !include customize.yaml
+
+automation: !include automations.yaml
+script: !include configfiles/scripts.yaml
+switch: !include configfiles/switch.yaml
+sensor: !include configfiles/sensor.yaml
+input_boolean: !include configfiles/input_boolean.yaml
+input_select: !include configfiles/input_select.yaml
+device_tracker: !include configfiles/device_tracker.yaml
+binary_sensor: !include configfiles/binary_sensor.yaml
+zone: !include configfiles/zone.yaml
+anniversaries: !include configfiles/anniversaries.yaml
+utility_meter: !include configfiles/utility_meter.yaml
+light: !include configfiles/light.yaml
 
 history:
 
@@ -19,7 +33,7 @@ weather:
     api_key: !secret darksky_api_key
     mode: daily
 
-#mqtt:
+# mqtt:
 #  discovery: true
 #  broker: core-mosquitto
 #  birth_message:
@@ -57,6 +71,11 @@ webostv:
   host: !secret lgwebostv_host_ip
   name: Living Room TV
 
+sonos:
+  media_player:
+    hosts:
+      - 192.168.1.181
+
 evohome:
   username: !secret evohome_username
   password: !secret evohome_password
@@ -82,14 +101,17 @@ logbook:
     entities:
       - sensor.node_red
       - input_boolean.node_red
+
 netatmo:
   client_id: !secret netatmo_client_id
   client_secret: !secret netatmo_client_secret
+
 sun:
 
 tts:
-  - platform: google_translate
-    service_name: google_say
+  - platform: amazon_polly
+    aws_access_key_id: !secret aws_access_key_id
+    aws_secret_access_key: !secret aws_secret_access_key
 
 # influxdb:
 #   port: !secret influxdb_port
@@ -100,8 +122,6 @@ tts:
 #   default_measurement: state
 
 cloud:
-
-mobile_app:
 
 panel_iframe:
   energy:
@@ -140,17 +160,3 @@ emulated_hue:
   expose_by_default: true
   exposed_domains:
     - script
-
-group: !include configfiles/groups.yaml
-automation: !include automations.yaml
-script: !include configfiles/scripts.yaml
-switch: !include configfiles/switch.yaml
-camera: !include configfiles/cameras.yaml
-sensor: !include configfiles/sensor.yaml
-input_boolean: !include configfiles/input_boolean.yaml
-input_select: !include configfiles/input_select.yaml
-device_tracker: !include configfiles/device_tracker.yaml
-binary_sensor: !include configfiles/binary_sensor.yaml
-zone: !include configfiles/zone.yaml
-anniversaries: !include configfiles/anniversaries.yaml
-utility_meter: !include configfiles/utility_meter.yaml

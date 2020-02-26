@@ -192,7 +192,7 @@ cards:
     - type: "custom:bignumber-card"
       entity: sensor.mc_activity_readable
       title: Current activity
-      scale: 15px
+      scale: 20px
 - type: horizontal-stack
   cards:
   - type: picture

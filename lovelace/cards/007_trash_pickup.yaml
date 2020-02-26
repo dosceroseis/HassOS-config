@@ -79,15 +79,15 @@ cards:
     - type: "custom:bignumber-card"
       entity: sensor.afval_rest_days_left
       title: Thursday
-      scale: 15px
+      scale: 20px
     - type: "custom:bignumber-card"
       entity: sensor.afval_gft_days_left
       title: Thursday
-      scale: 15px
+      scale: 20px
     - type: "custom:bignumber-card"
       entity: sensor.afval_papier_days_left
       title: Saturday
-      scale: 15px
+      scale: 20px
 - type: horizontal-stack
   cards:
   - type: picture

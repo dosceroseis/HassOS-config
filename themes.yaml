@@ -51,10 +51,7 @@ midnight:
   disabled-text-color: '#3E3E3E'                                                  # Disabled text colour
   label-badge-border-color: 'green'                                               # Label badge border, just a reference value   
   # Shadows
-  box-shadow: 0 0 0 0
-  shadow-elevation-2dp_-_box-shadow: '0px 0px 0px 0px hsl(var(--huesat) 10%)'
-  shadow-elevation-16dp_-_box-shadow: '0px 0px 0px 0px hsl(var(--huesat) 25%)'
-  ha-card-box-shadow: 'none'
+  ha-card-box-shadow: '0px 0px 0px 0px'
   color: "#ffffff"
   # Background colors                                                            
   primary-background-color: '#383C45'                                             # Settings background
@@ -138,6 +135,9 @@ midnight2:
   icon-color-blue-grey: '#607D8B'
   icon-color-deep-red: '#B71C1C'
   card-background-color: "var(--paper-card-background-color)"
+
+# Shadows
+  ha-card-box-shadow: '0px 0px 0px 0px'
 
 # Text colors                                                                  
   primary-text-color: '#FFFFFF'                                                   # Primary text colour, here is referencing dark-primary-color

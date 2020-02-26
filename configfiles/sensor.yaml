@@ -3,31 +3,6 @@
   modules:
     - Home-Inside
     - Home-Outside
-- platform: systemmonitor
-  resources:
-    - type: disk_use_percent
-    - type: disk_use
-    - type: disk_free
-    - type: memory_use_percent
-    - type: memory_use
-    - type: memory_free
-    - type: swap_use_percent
-    - type: swap_use
-    - type: swap_free
-    - type: load_1m
-    - type: load_5m
-    - type: load_15m
-    - type: network_in
-    - type: network_out
-    - type: throughput_network_in
-    - type: throughput_network_out
-    - type: packets_in
-    - type: packets_out
-    - type: ipv4_address
-    - type: ipv6_address
-    - type: processor_use
-    - type: process
-    - type: last_boot
 - platform: dsmr_reader
 - platform: time_date
   display_options:
@@ -554,7 +529,7 @@
     minutes: 30
 - platform: template
   sensors:
-    solar_angle:
+    gas_max_30:
       friendly_name: "Gas Max 30"
       unit_of_measurement: '°'
       value_template: "{{ state_attr('sensor.gas_mean', 'max') }}"
@@ -566,59 +541,79 @@
       friendly_name: "Power Consumption Total"
       unit_of_measurement: 'kWh'
       value_template: "{{ states('sensor.power_consumption_low')|float + states('sensor.power_consumption_normal')|float }}"
-    pachy_charge:
-      friendly_name: "Pachy Charge"
-      unit_of_measurement: '%'
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'battery_level') }}"
-    pachy_status:
-      friendly_name: "Pachy Status"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'status') }}"
-    pachy_do_not_disturb:
-      friendly_name: "Pachy Do Not Disturb"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'do_not_disturb') }}"
-    pachy_fan_speed:
-      friendly_name: "Pachy Fan Speed"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'fan_speed') }}"
-    pachy_cleaning_time:
-      friendly_name: "Cleaning Time"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'cleaning_time') }}"
-    pachy_cleaned_area:
-      friendly_name: "Cleaned Area"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'cleaned_area') }}"
-      unit_of_measurement: 'm2'
-    pachy_cleaning_count:
-      friendly_name: "Cleaning Count"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'cleaning_count') }}"
-    pachy_total_cleaned_area:
-      friendly_name: "Total Cleaned Area"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'total_cleaned_area') }}"
-    pachy_total_cleaning_time:
-      friendly_name: "Total Cleaning Time"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'total_cleaning_time') }}"
-    pachy_main_brush_left:
-      friendly_name: "Main Brush Left"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'main_brush_left') }}"
-    pachy_side_brush_left:
-      friendly_name: "Side Brush Left"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'side_brush_left') }}"
-    pachy_filter_left:
-      friendly_name: "Filter Left"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'filter_left') }}"
-    pachy_sensor_dirty_left:
-      friendly_name: "Sensor Dirty Left"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'dirty_left') }}"
-    pachy_battery_icon:
-      friendly_name: "Battery Icon"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'battery_icon') }}"
-    pachy_fan_speed_list:
-      friendly_name: "Fan Speed List"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'fan_speed_list') }}"
-    pachy_clean_start:
-      friendly_name: "Fan Clean Start"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'clean_start') }}"
-    pachy_clean_stop:
-      friendly_name: "Fan Clean Stop"
-      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'clean_stop') }}"
+    climate_woonkamer_active:
+      friendly_name: "Climate Woonkamer Active"
+      value_template: "{{ state_attr('climate.woonkamer', 'hvac_action') }}"
+    climate_keuken_active:
+      friendly_name: "Climate Keuken Active"
+      value_template: "{{ state_attr('climate.keuken', 'hvac_action') }}"
+    climate_berging_active:
+      friendly_name: "Climate Berging Active"
+      value_template: "{{ state_attr('climate.berging', 'hvac_action') }}"
+    climate_badkamer_active:
+      friendly_name: "Climate Badkamer Active"
+      value_template: "{{ state_attr('climate.badkamer_1v', 'hvac_action') }}"
+#    pachy_charge:
+#      friendly_name: "Pachy Charge"
+#      unit_of_measurement: '%'
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'battery_level') }}"
+#    pachy_status:
+#      friendly_name: "Pachy Status"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'status') }}"
+#    pachy_do_not_disturb:
+#      friendly_name: "Pachy Do Not Disturb"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'do_not_disturb') }}"
+#    pachy_fan_speed:
+#      friendly_name: "Pachy Fan Speed"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'fan_speed') }}"
+#    pachy_cleaning_time:
+#      friendly_name: "Cleaning Time"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'cleaning_time') }}"
+#    pachy_cleaned_area:
+#      friendly_name: "Cleaned Area"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'cleaned_area') }}"
+#      unit_of_measurement: 'm2'
+#    pachy_cleaning_count:
+#      friendly_name: "Cleaning Count"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'cleaning_count') }}"
+#    pachy_total_cleaned_area:
+#      friendly_name: "Total Cleaned Area"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'total_cleaned_area') }}"
+#    pachy_total_cleaning_time:
+#      friendly_name: "Total Cleaning Time"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'total_cleaning_time') }}"
+#    pachy_main_brush_left:
+#      friendly_name: "Main Brush Left"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'main_brush_left') }}"
+#    pachy_side_brush_left:
+#      friendly_name: "Side Brush Left"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'side_brush_left') }}"
+#    pachy_filter_left:
+#      friendly_name: "Filter Left"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'filter_left') }}"
+#    pachy_sensor_dirty_left:
+#      friendly_name: "Sensor Dirty Left"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'dirty_left') }}"
+#    pachy_battery_icon:
+#      friendly_name: "Battery Icon"
+#     value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'battery_icon') }}"
+#    pachy_fan_speed_list:
+#      friendly_name: "Fan Speed List"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'fan_speed_list') }}"
+#    pachy_clean_start:
+#      friendly_name: "Fan Clean Start"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'clean_start') }}"
+#    pachy_clean_stop:
+#      friendly_name: "Fan Clean Stop"
+#      value_template: "{{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'clean_stop') }}"
+#    vacuum_cleaner_error_sensor:
+#      friendly_name: Vacuum Cleaner Error Sensor
+#      value_template: >-
+#        {% if states.vacuum.xiaomi_vacuum_cleaner.attributes.error is defined %}
+#          {{states.vacuum.xiaomi_vacuum_cleaner.attributes.error}}
+#        {% else %}
+#          No Error
+#        {% endif %}
     darksky_temp_outside:
       friendly_name: "DarkSky Temp Outside"
       value_template: "{{ state_attr('weather.dark_sky', 'temperature') }}"
@@ -627,14 +622,6 @@
       friendly_name: "DarkSky Temp Humidity"
       value_template: "{{ state_attr('weather.dark_sky', 'humidity') }}"
       unit_of_measurement: '%'
-    vacuum_cleaner_error_sensor:
-      friendly_name: Vacuum Cleaner Error Sensor
-      value_template: >-
-        {% if states.vacuum.xiaomi_vacuum_cleaner.attributes.error is defined %}
-          {{states.vacuum.xiaomi_vacuum_cleaner.attributes.error}}
-        {% else %}
-          No Error
-        {% endif %}
     climate_livingroom_target_temperature:
       friendly_name: "Climate Livingroom Target Temperature"
       value_template: "{{ state_attr('climate.woonkamer', 'temperature') }}"

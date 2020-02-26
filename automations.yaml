@@ -27,18 +27,35 @@
   - data:
       addon: core_mosquitto
     service: hassio.addon_restart
-- id: '1582497126970'
-  alias: Turn Up brightness
+- id: '1582569212742'
+  alias: Brightness Livingroom Up
   description: ''
   trigger:
-  - device_id: ad8736bc801648b4ba81ef1eb0de1b1a
+  - device_id: a76275d0f39d4025bd32aaefe371086c
     domain: deconz
     platform: device
-    subtype: turn_on
-    type: remote_button_long_press
+    subtype: left
+    type: remote_button_rotated
   condition: []
   action:
-  - device_id: 62390f5e347049308cddec4ecbb130b3
-    domain: light
-    entity_id: light.hue_livingroom_spot_4
-    type: brightness_increase
+    service: light.turn_on
+    data:
+      brightness_step_pct: 10
+      entity_id:
+      - light.lightgroup_livingroom
+- id: '1582569212743'
+  alias: Brightness Livingroom Down
+  description: ''
+  trigger:
+  - device_id: a76275d0f39d4025bd32aaefe371086c
+    domain: deconz
+    platform: device
+    subtype: right
+    type: remote_button_rotated
+  condition: []
+  action:
+    service: light.turn_on
+    data:
+      brightness_step_pct: -10
+      entity_id:
+      - light.lightgroup_livingroom
