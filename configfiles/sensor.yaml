@@ -531,8 +531,8 @@
   sensors:
     gas_max_30:
       friendly_name: "Gas Max 30"
-      unit_of_measurement: '°'
-      value_template: "{{ state_attr('sensor.gas_mean', 'max') }}"
+      unit_of_measurement: 'm3'
+      value_template: "{{ state_attr('sensor.gas_mean', 'max_value') }}"
     solar_angle:
       friendly_name: "Sun Angle"
       unit_of_measurement: '°'
