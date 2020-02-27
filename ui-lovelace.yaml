@@ -25,7 +25,7 @@ custom_header:
       lock_format: 24
       hide_tabs: 4,5
 
-resources:
+resources: 
 - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
   type: module
 - url: /community_plugin/button-card/button-card.js
@@ -36,28 +36,32 @@ resources:
   type: module
 - url: /community_plugin/lovelace-card-mod/card-mod.js
   type: module
-- url: /local/weather-card.js?v=7.2
-  type: module
 - url: /community_plugin/custom-header/custom-header.js
   type: module
 - url: /community_plugin/lovelace-card-mod/card-mod.js
   type: module
-- url: /local/flex-horseshoe-card/flex-horseshoe-card.js?v=0.5
-  type: module
 - url: /community_plugin/lovelace-card-tools/card-tools.js
   type: module
+- url: /community_plugin/bar-card/bar-card.js
+  type: js
+- url: /community_plugin/lovelace-slider-entity-row/slider-entity-row.js
+  type: module
+- url: /local/flex-horseshoe-card/flex-horseshoe-card.js?v=0.6
+  type: module
 - url: /local/vertical-style-card.js?v=0.4
+  type: js
+- url: /local/singlevalue-card.js?v=0.1
   type: js
 - url: /local/doublevalue-card.js?v=0.0.1
   type: js
 - url: /local/triplevalue-card.js?v=0.0.6
   type: js
-- url: /local/singlevalue-card.js?v=0.1
-  type: js
-- url: /community_plugin/bar-card/bar-card.js
+- url: /local/bignumber-card.js
   type: js
 - url: /local/bignumber-card.js
   type: js
+- url: /local/weather-card.js?v=7.2
+  type: module
 
 title: Jurassic
 views:
