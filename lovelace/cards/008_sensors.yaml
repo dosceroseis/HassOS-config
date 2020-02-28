@@ -92,6 +92,7 @@ cards:
     cards:
     - type: "custom:button-card"
       name: Entree
+      icon: mdi:walk
       tap_action: 
         action: more-info
       color_type: icon
@@ -110,6 +111,7 @@ cards:
         icon: mdi:walk
     - type: "custom:button-card"
       name: Hallway
+      icon: mdi:walk
       tap_action: 
         action: more-info
       color_type: icon
@@ -128,6 +130,7 @@ cards:
         icon: mdi:walk
     - type: "custom:button-card"
       name: Kitchen
+      icon: mdi:walk
       tap_action: 
         action: more-info
       color_type: icon
@@ -146,6 +149,7 @@ cards:
         icon: mdi:walk
     - type: "custom:button-card"
       name: Washroom
+      icon: mdi:walk
       tap_action: 
         action: more-info
       color_type: icon
@@ -166,6 +170,7 @@ cards:
     cards:
     - type: "custom:button-card"
       name: Toilet
+      icon: mdi:walk
       tap_action: 
         action: more-info
       color_type: icon
@@ -184,6 +189,7 @@ cards:
         icon: mdi:walk
     - type: "custom:button-card"
       name: Bathroom
+      icon: mdi:walk
       tap_action: 
         action: more-info
       color_type: icon
@@ -202,6 +208,7 @@ cards:
         icon: mdi:walk
     - type: "custom:button-card"
       name: Attic
+      icon: mdi:walk
       tap_action: 
         action: more-info
       color_type: icon
@@ -220,6 +227,7 @@ cards:
         icon: mdi:walk
     - type: "custom:button-card"
       name: Garage
+      icon: mdi:walk
       tap_action: 
         action: more-info
       color_type: icon

@@ -168,6 +168,23 @@ cards:
       - value: 'off'
         color: var(--icon-off-color)
         icon: mdi:lightbulb
+    - type: "custom:button-card"
+      name: Garage
+      color_type: icon
+      entity: switch.sonoff2
+      action: more_info
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - background-color: var(--element-accent-color)
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:lightbulb-on
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:lightbulb
   - type: horizontal-stack
     cards:
     - type: custom:slider-entity-row
@@ -184,6 +201,10 @@ cards:
       hide_state: true
     - type: custom:slider-entity-row
       entity: light.bathroom
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.batie
       full_row: true
       hide_state: true
   - type: horizontal-stack

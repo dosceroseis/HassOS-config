@@ -185,7 +185,7 @@ cards:
       font-size: 8px
       color: var(--icon-color-amber)
     - type: custom:bar-card
-      title: Coffeemachine
+      title: Mediacenter
       title_position: inside
       unit_of_measurement: "W"
       entity: sensor.tp_link_mediacenter_current_load
