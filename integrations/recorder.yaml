@@ -1,0 +1,3 @@
+recorder:
+  db_url: !secret recorder_string
+  purge_keep_days: 30

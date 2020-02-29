@@ -1,0 +1,5 @@
+logbook:
+  exclude:
+    entities:
+      - sensor.node_red
+      - input_boolean.node_red

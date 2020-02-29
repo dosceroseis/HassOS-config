@@ -10,7 +10,7 @@
 !*.md
 !/lovelace
 !/lovelace/cards
-!/configfiles
+!/integrations
 !/custom_components
 !/www
 /configfiles/anniversaries.yaml

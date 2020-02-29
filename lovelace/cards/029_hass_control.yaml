@@ -77,3 +77,68 @@ cards:
       cards:
       - type: picture
         image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: custom:bar-card
+      title: RAM used
+      title_position: inside
+      unit_of_measurement: "%"
+      entity: sensor.glances_ram_used_percent
+      padding: 2px
+      indicator: right
+      card_style:
+      - box-shadow: none
+      title_style:
+      - text-align: left
+      - font-size: 16px
+      bar_style:
+      - align-items: left
+      font-size: 8px
+      severity:
+      - value: 50
+        color: var(--icon-color-green)
+      - value: 60
+        color: var(--icon-color-yellow)
+      - value: 80
+        color: var(--icon-color-orange)
+      - value: 100
+        color: var(--icon-color-red)
+    - type: "custom:bignumber-card"
+      title: CPU used
+      unit_of_measurement: "%"
+      scale: 15px
+      entity: sensor.glances_cpu_used
+  - type: horizontal-stack
+    cards:
+      - type: custom:mini-graph-card
+        entities:
+        - sensor.glances_ram_used_percent
+        name: History
+        align_header: left
+        align_state: left
+        show:
+          name: false
+          icon: false
+          state: false
+        line_color: 
+        - var(--icon-color-green)
+        hours_to_show: 4
+        points_per_hour: 60
+        lower_bound: 0
+        upper_bound: 100
+      - type: custom:mini-graph-card
+        entities:
+        - sensor.glances_cpu_used
+        name: History
+        align_header: left
+        align_state: left
+        show:
+          name: false
+          icon: false
+          state: false
+        line_color: 
+        - var(--icon-color-red)
+        hours_to_show: 4
+        points_per_hour: 60
+        lower_bound: 0
+        upper_bound: 100
