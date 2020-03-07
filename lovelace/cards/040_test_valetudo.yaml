@@ -1,0 +1,9 @@
+type: 'custom:valetudo-map-card'
+entity: sensor.pachy_map
+rotate: 0
+crop:
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+min_height: 0

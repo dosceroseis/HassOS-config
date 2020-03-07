@@ -84,10 +84,6 @@ input_boolean:
     name: showering_bathroom
   motion_hallway_toggle:
     name: motion_hallway_toggle
-  motion_controlled_hallway:
-    name: motion_controlled_hallway
-  motion_controlled_attic:
-    name: motion_controlled_attic
   motion_attic_toggle:
     name: motion_attic_toggle
   motion_bathroom_toggle:

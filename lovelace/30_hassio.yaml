@@ -5,3 +5,4 @@ icon: mdi:home-assistant
 cards:
   - !include cards/025_adguard.yaml
   - !include cards/029_hass_control.yaml
+  - !include cards/040_test_valetudo.yaml

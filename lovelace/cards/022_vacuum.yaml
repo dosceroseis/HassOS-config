@@ -8,8 +8,8 @@ cards:
   cards:
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png
   - type: horizontal-stack
     cards:
       - type: "custom:button-card"
@@ -23,9 +23,9 @@ cards:
         color_off: var(--icon-off-color)
         color_type: icon
         layout: icon_state_name2nd
-        entity: vacuum.xiaomi_vacuum_cleaner
+        entity: vacuum.pachy
         label_template: >
-          return states['sensor.vacuum_bat_state'].state
+          return states['sensor.pachy_bat_state'].state
         style:
         - color: var(--icon-off-color)
         state:
@@ -45,8 +45,8 @@ cards:
           color: var(--icon-color-red)
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png
   - type: horizontal-stack
     cards:
       - type: "custom:button-card"
@@ -72,7 +72,7 @@ cards:
         show_name: false
         show_label: false
         color_type: card
-        entity: vacuum.xiaomi_vacuum_cleaner
+        entity: vacuum.pachy
         tap_action:
           action: call-service
           service: script.pachy_dock
@@ -102,7 +102,7 @@ cards:
         show_name: false
         show_label: false
         color_type: card
-        entity: vacuum.xiaomi_vacuum_cleaner
+        entity: vacuum.pachy
         tap_action:
           action: call-service
           service: script.pachy_clean
@@ -130,7 +130,7 @@ cards:
         show_name: false
         show_label: false
         color_type: card
-        entity: vacuum.xiaomi_vacuum_cleaner
+        entity: vacuum.pachy
         tap_action:
           action: call-service
           service: script.pachy_pause
@@ -157,8 +157,8 @@ cards:
           color: var(--icon-color-red)
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png
   - type: horizontal-stack
     cards:
     - type: custom:bar-card
@@ -192,17 +192,17 @@ cards:
     - type: "custom:bignumber-card"
       title: Runtime
       scale: 15px
-      entity: sensor.vacuum_ontime
+      entity: sensor.pachy_ontime
   - type: horizontal-stack
     cards:
-     - type: picture
-       image: /local/divider.png
+    - type: picture
+      image: /local/divider.png
   - type: horizontal-stack
     cards:
     - type: "custom:bignumber-card"
       title: Last Run
       scale: 15px
-      entity: sensor.vacuum_last_run
+      entity: sensor.pachy_last_run
     - type: "custom:bignumber-card"
       title: Area Cleaned
       scale: 15px
