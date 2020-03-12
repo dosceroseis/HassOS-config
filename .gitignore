@@ -13,7 +13,7 @@
 !/integrations
 !/custom_components
 !/www
-/configfiles/anniversaries.yaml
+/integrations/anniversaries.yaml
 /esphome
 /glances
 /node-red
