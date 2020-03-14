@@ -16,13 +16,10 @@ cards:
         icon: mdi:robot-vacuum
         name: 'Pachycephalosaurus'
         show_name: false
-        show_label: true
-        show_state: true
+        show_label: false
+        show_state: false
         action: more_info
-        color: var(--icon-color-amber)
-        color_off: var(--icon-off-color)
-        color_type: icon
-        layout: icon_state_name2nd
+        color_type: card
         entity: vacuum.pachy
         label_template: >
           return states['sensor.pachy_bat_state'].state
@@ -30,7 +27,7 @@ cards:
         - color: var(--icon-off-color)
         state:
         - value: 'docked'
-          color: var(--icon-color-blue)
+          color: var(--icon-color-amber)
         - value: 'cleaning'
           color: var(--icon-color-green)
         - value: 'paused'
@@ -43,30 +40,6 @@ cards:
           color: var(--icon-off-color)
         - value: 'error'
           color: var(--icon-color-red)
-  - type: horizontal-stack
-    cards:
-    - type: picture
-      image: /local/divider.png
-  - type: horizontal-stack
-    cards:
-      - type: "custom:button-card"
-        icon: mdi:calendar-blank
-        show_name: false
-        show_label: false
-        show_state: false
-        color_type: card
-        entity: input_boolean.vacuum_autorun
-        tap_action:
-            action: toggle
-        style:
-          - color: var(--icon-off-color)
-        state:
-        - value: 'on'
-          color: var(--icon-color-green)
-          icon: mdi:calendar-check
-        - value: 'off'
-          color: var(--icon-color-red)
-          icon: mdi:calendar-remove
       - type: "custom:button-card"
         icon: mdi:gas-station
         show_name: false
@@ -97,68 +70,155 @@ cards:
           color: var(--element-accent-color)
         - value: 'error'
           color: var(--icon-color-red)
+      - type: custom:state-switch
+        entity: vacuum.pachy
+        states:
+          docked:
+            type: "custom:button-card"
+            icon: mdi:broom
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            entity: vacuum.pachy
+            tap_action:
+              action: call-service
+              service: script.pachy_clean
+          returning:
+            type: "custom:button-card"
+            icon: mdi:broom
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            entity: vacuum.pachy
+            tap_action:
+              action: call-service
+              service: script.pachy_clean
+            style:
+            - color: var(--icon-off-color)
+          idle:
+            type: "custom:button-card"
+            icon: mdi:broom
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            entity: vacuum.pachy
+            tap_action:
+              action: call-service
+              service: script.pachy_clean
+            style:
+            - color: var(--icon-off-color)
+          error:
+            type: "custom:button-card"
+            icon: mdi:alert-circle
+            color_type: card
+            color: var(--element-accent-color)
+            show_name: false
+            show_label: false
+            color: var(--icon-color-orange)
+            entity: vacuum.pachy
+            tap_action:
+              action: more-info
+          paused:
+            type: "custom:button-card"
+            icon: mdi:broom
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            entity: vacuum.pachy
+            tap_action:
+              action: call-service
+              service: script.pachy_clean
+            style:
+            - color: var(--icon-off-color)
+          cleaning:
+            type: "custom:button-card"
+            icon: mdi:pause-circle
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            entity: vacuum.pachy
+            tap_action:
+              action: call-service
+              service: script.pachy_pause
+          unavailable:
+            type: "custom:button-card"
+            icon: mdi:wifi-off
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            color: var(--icon-color-grey)
+            entity: vacuum.pachy
+            tap_action:
+              action: more-info
       - type: "custom:button-card"
-        icon: mdi:broom
+        icon: mdi:calendar-blank
         show_name: false
         show_label: false
+        show_state: false
         color_type: card
-        entity: vacuum.pachy
+        entity: input_boolean.vacuum_autorun
         tap_action:
-          action: call-service
-          service: script.pachy_clean
+            action: toggle
         style:
-        - color: var(--icon-off-color)
+          - color: var(--icon-off-color)
         state:
-        - value: 'docked'
-          color: var(--element-accent-color)
-        - value: 'cleaning'
+        - value: 'on'
           color: var(--icon-color-green)
-        - value: 'charging'
-          color: var(--element-accent-color)
-        - value: 'paused'
-          color: var(--element-accent-color)
-        - value: 'returning'
-          color: var(--element-accent-color)
-        - value: 'idle'
-          color: var(--element-accent-color)
-        - value: 'unavailable'
-          color: var(--element-accent-color)
-        - value: 'error'
+          icon: mdi:calendar-check
+        - value: 'off'
           color: var(--icon-color-red)
-      - type: "custom:button-card"
-        icon: mdi:pause-circle
-        show_name: false
-        show_label: false
-        color_type: card
-        entity: vacuum.pachy
-        tap_action:
-          action: call-service
-          service: script.pachy_pause
-        style:
-        - color: var(--icon-off-color)
-        state:
-        - value: 'docked'
-          color: var(--element-accent-color)
-        - value: 'cleaning'
-          color: var(--element-accent-color)
-        - value: 'charging'
-          color: var(--element-accent-color)
-        - value: 'paused'
-          color: var(--icon-color-orange)
-          icon: mdi:play-circle
-        - value: 'returning'
-          color: var(--element-accent-color)
-        - value: 'idle'
-          color: var(--icon-color-orange)
-          icon: mdi:play-circle
-        - value: 'unavailable'
-          color: var(--element-accent-color)
-        - value: 'error'
-          color: var(--icon-color-red)
+          icon: mdi:calendar-remove
   - type: horizontal-stack
     cards:
     - type: picture
       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: custom:state-switch
+      entity: vacuum.pachy
+      states:
+        cleaning:
+          type: "custom:bignumber-card"
+          title: Runtime
+          scale: 15px
+          entity: sensor.pachy_ontime
+        docked:
+          type: "custom:bignumber-card"
+          title: Last Run
+          scale: 15px
+          entity: sensor.pachy_last_run
+        returning:
+          type: "custom:bignumber-card"
+          title: Last Run
+          scale: 15px
+          entity: sensor.pachy_last_run
+        idle:
+          type: "custom:bignumber-card"
+          title: Last Run
+          scale: 15px
+          entity: sensor.pachy_last_run
+        error:
+          type: "custom:bignumber-card"
+          title: Last Run
+          scale: 15px
+          entity: sensor.pachy_last_run
+        paused:
+          type: "custom:bignumber-card"
+          title: Runtime
+          scale: 15px
+          entity: sensor.pachy_ontime
+    - type: "custom:bignumber-card"
+      title: Area Cleaned
+      scale: 15px
+      entity: sensor.pachy_cleaned_area
+      style:
+      - text-transform: capitalize
   - type: horizontal-stack
     cards:
     - type: custom:bar-card
@@ -189,23 +249,3 @@ cards:
         color: var(--icon-color-light-green)
       - value: 100
         color: var(--icon-color-green)
-    - type: "custom:bignumber-card"
-      title: Runtime
-      scale: 15px
-      entity: sensor.pachy_ontime
-  - type: horizontal-stack
-    cards:
-    - type: picture
-      image: /local/divider.png
-  - type: horizontal-stack
-    cards:
-    - type: "custom:bignumber-card"
-      title: Last Run
-      scale: 15px
-      entity: sensor.pachy_last_run
-    - type: "custom:bignumber-card"
-      title: Area Cleaned
-      scale: 15px
-      entity: sensor.pachy_cleaned_area
-      style:
-      - text-transform: capitalize

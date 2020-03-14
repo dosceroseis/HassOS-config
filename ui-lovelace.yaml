@@ -30,15 +30,9 @@ resources:
   type: module
 - url: /community_plugin/button-card/button-card.js
   type: module
-- url: /community_plugin/simple-thermostat/simple-thermostat.js
-  type: module
-- url: /community_plugin/decluttering-card/decluttering-card.js
-  type: module
 - url: /community_plugin/lovelace-card-mod/card-mod.js
   type: module
 - url: /community_plugin/custom-header/custom-header.js
-  type: module
-- url: /community_plugin/lovelace-card-mod/card-mod.js
   type: module
 - url: /community_plugin/lovelace-card-tools/card-tools.js
   type: module
@@ -46,7 +40,7 @@ resources:
   type: js
 - url: /community_plugin/lovelace-valetudo-map-card/valetudo-map-card.js
   type: js
-- url: /community_plugin/banner-card/banner-card.js
+- url: /community_plugin/lovelace-state-switch/state-switch.js?v=0.1
   type: module
 - url: /community_plugin/lovelace-slider-entity-row/slider-entity-row.js
   type: module

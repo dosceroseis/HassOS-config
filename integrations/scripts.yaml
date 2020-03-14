@@ -17,60 +17,48 @@ script:
       data:
         payload: shortpress
         topic: harmony/pc
-  harmony_tv:
+  harmony_ziggo:
     sequence:
     - service: mqtt.publish
       data:
         payload: shortpress
         topic: harmony/tv
-  harmony_ps4:
+  harmony_console:
     sequence:
     - service: mqtt.publish
       data:
         payload: shortpress
-        topic: harmony/ps4
-  harmony_muziek:
+        topic: harmony/console
+  harmony_shieldtv:
     sequence:
     - service: mqtt.publish
       data:
         payload: shortpress
-        topic: harmony/music
-  harmony_spotify:
-    sequence:
-    - service: mqtt.publish
-      data:
-        payload: shortpress
-        topic: harmony/spotify
+        topic: harmony/shieldtv
   harmony_pc_long:
     sequence:
     - service: mqtt.publish
       data:
         payload: longpress
         topic: harmony/pc
-  harmony_tv_long:
+  harmony_ziggo_long:
     sequence:
     - service: mqtt.publish
       data:
         payload: longpress
         topic: harmony/tv
-  harmony_ps4_long:
+  harmony_console_long:
     sequence:
     - service: mqtt.publish
       data:
         payload: longpress
-        topic: harmony/ps4
-  harmony_muziek_long:
+        topic: harmony/console
+  harmony_shieldtv_long:
     sequence:
     - service: mqtt.publish
       data:
         payload: longpress
-        topic: harmony/music
-  harmony_spotify_long:
-    sequence:
-    - service: mqtt.publish
-      data:
-        payload: longpress
-        topic: harmony/spotify
+        topic: harmony/shieldtv
   selfheal_initiate:
     sequence:
     - data:

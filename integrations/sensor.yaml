@@ -530,8 +530,23 @@ sensor:
   name: gas_mean
   max_age:
     minutes: 30
+- platform: sql
+  db_url: !secret recorder_string
+  queries:
+    - name: 'DataBase size KB'
+      query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1024, 1) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
+      column: 'value'
+      unit_of_measurement: MB
 - platform: template
   sensors:
+    database_size_mb:
+      friendly_name: "Database_size_MB"
+      unit_of_measurement: 'MB'
+      value_template: "{{ (states('sensor.database_size_kb')|float / 1024)| round(0)}}"
+    database_size_gb:
+      friendly_name: "Database_size_GB"
+      unit_of_measurement: 'GB'
+      value_template: "{{ (states('sensor.database_size_mb')|float / 1024)| round(1)}}"
     gas_max_30:
       friendly_name: "Gas Max 30"
       unit_of_measurement: 'm3'
@@ -1069,4 +1084,3 @@ sensor:
     - uv_index
     - apparent_temperature_high
     - apparent_temperature_low
-
