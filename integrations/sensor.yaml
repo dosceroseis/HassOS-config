@@ -859,54 +859,54 @@ sensor:
         {% else %}
           {{ (state_attr('switch.tp_link_washer', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
         {% endif %}
-    tp_link_humidifier_total_kwh:
-      friendly_name: "Humidifier Total Power Used"
-      value_template: "{{ state_attr('switch.tp_link_humidifier', 'total_energy_kwh') }}"
+    tp_link_dryer_total_kwh:
+      friendly_name: "Dryer Total Power Used"
+      value_template: "{{ state_attr('switch.tp_link_dryer', 'total_energy_kwh') }}"
       unit_of_measurement: 'kWh'
-    tp_link_humidifier_hourly_power:
-      friendly_name: Humidifier Hourly Power
+    tp_link_dryer_hourly_power:
+      friendly_name: Dryer Hourly Power
       unit_of_measurement: kWh
-      value_template: "{{ states('sensor.humidifier_power_hourly_peak')|float + states('sensor.humidifier_power_hourly_offpeak')|float }}"
-    tp_link_humidifier_hourly_power_cost:
-      friendly_name: Humidifier Hourly Power Cost
+      value_template: "{{ states('sensor.dryer_power_hourly_peak')|float + states('sensor.dryer_power_hourly_offpeak')|float }}"
+    tp_link_dryer_hourly_power_cost:
+      friendly_name: Dryer Hourly Power Cost
       unit_of_measurement: kWh
-      value_template: "{{ (states('sensor.humidifier_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
-    tp_link_humidifier_daily_power:
-      friendly_name: Humidifier Daily Power
+      value_template: "{{ (states('sensor.dryer_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_dryer_daily_power:
+      friendly_name: Dryer Daily Power
       unit_of_measurement: kWh
-      value_template: "{{ states('sensor.humidifier_power_daily_peak')|float + states('sensor.humidifier_power_daily_offpeak')|float }}"
-    tp_link_humidifier_daily_power_cost:
-      friendly_name: Humidifier Daily Power Cost
+      value_template: "{{ states('sensor.dryer_power_daily_peak')|float + states('sensor.dryer_power_daily_offpeak')|float }}"
+    tp_link_dryer_daily_power_cost:
+      friendly_name: Dryer Daily Power Cost
       unit_of_measurement: kWh
-      value_template: "{{ (states('sensor.humidifier_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
-    tp_link_humidifier_weekly_power:
-      friendly_name: Humidifier Weekly Power
+      value_template: "{{ (states('sensor.dryer_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_dryer_weekly_power:
+      friendly_name: Dryer Weekly Power
       unit_of_measurement: kWh
-      value_template: "{{ states('sensor.humidifier_power_weekly_peak')|float + states('sensor.humidifier_power_weekly_offpeak')|float }}"
-    tp_link_humidifier_weekly_power_cost:
-      friendly_name: Humidifier Weekly Power Cost
+      value_template: "{{ states('sensor.dryer_power_weekly_peak')|float + states('sensor.dryer_power_weekly_offpeak')|float }}"
+    tp_link_dryer_weekly_power_cost:
+      friendly_name: Dryer Weekly Power Cost
       unit_of_measurement: kWh
-      value_template: "{{ (states('sensor.humidifier_power_weekly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_weekly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
-    tp_link_humidifier_monthly_power:
-      friendly_name: Humidifier Monthly Power
+      value_template: "{{ (states('sensor.dryer_power_weekly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_weekly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_dryer_monthly_power:
+      friendly_name: Dryer Monthly Power
       unit_of_measurement: kWh
-      value_template: "{{ states('sensor.humidifier_power_monthly_peak')|float + states('sensor.humidifier_power_weekly_offpeak')|float }}"
-    tp_link_humidifier_monthly_power_cost:
-      friendly_name: Humidifier Monthly Power Cost
+      value_template: "{{ states('sensor.dryer_power_monthly_peak')|float + states('sensor.dryer_power_weekly_offpeak')|float }}"
+    tp_link_dryer_monthly_power_cost:
+      friendly_name: Dryer Monthly Power Cost
       unit_of_measurement: kWh
-      value_template: "{{ (states('sensor.humidifier_power_monthly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_monthly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
-    tp_link_humidifier_current_load:
-      friendly_name: "Humidifier Current Load"
-      value_template: "{{ state_attr('switch.tp_link_humidifier', 'current_power_w') }}"
+      value_template: "{{ (states('sensor.dryer_power_monthly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_monthly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_dryer_current_load:
+      friendly_name: "Dryer Current Load"
+      value_template: "{{ state_attr('switch.tp_link_dryer', 'current_power_w') }}"
       unit_of_measurement: 'Watts'
-    tp_link_humidifier_current_cost:
-      friendly_name: "humidifier Current Cost"
+    tp_link_dryer_current_cost:
+      friendly_name: "Dryer Current Cost"
       unit_of_measurement: €/h
       value_template: >-
         {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
-          {{ (state_attr('switch.tp_link_humidifier', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+          {{ (state_attr('switch.tp_link_dryer', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
         {% else %}
-          {{ (state_attr('switch.tp_link_humidifier', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+          {{ (state_attr('switch.tp_link_dryer', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
         {% endif %}
     tp_link_quooker_total_kwh:
       friendly_name: "Quooker Total Power Used"

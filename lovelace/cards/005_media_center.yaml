@@ -126,7 +126,7 @@ cards:
       entity: sensor.mc_activity_readable
       title: Current activity
       scale: 17px
-- type: horizontal-stack
-  cards:
-  - type: picture
-    image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
